@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SOSEXPRESS</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="acessar">Acessar</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="todo">TODO</string>
+    <string name="usu_rio">Usuário</string>
+</resources>
