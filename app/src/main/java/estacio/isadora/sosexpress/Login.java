@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity {
         botaocadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                telacadastro();
+                telamapa ();
             }
 
 
@@ -27,8 +27,8 @@ public class Login extends AppCompatActivity {
         });
 
     }
-    public void telacadastro (){
-        Intent intent = new Intent(this, CadastroOficina.class);
+    public void telamapa (){
+        Intent intent = new Intent(this, MapaUsuario.class);
         startActivity(intent);
     }
 }
