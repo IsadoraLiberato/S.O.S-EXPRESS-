@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroOficina"></activity>
+        <activity android:name=".CadastroOficina" />
+        <activity android:name=".CdsOficina" />
+        <activity android:name=".CdsUsuario"></activity>
     </application>
 
 </manifest>
