@@ -45,7 +45,7 @@ public class MapaUsuario extends FragmentActivity implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+/*
         // Add a marker in Sydney and move the camera
         LatLng address = getLocationFromAddress(this, "Av. Alm. Alexandrino de Alencar, 708 - Alecrim, Natal - RN, 59030-350, Brasil");
         mMap.addMarker(new MarkerOptions().position(address).title("Estacio"));
@@ -60,9 +60,9 @@ public class MapaUsuario extends FragmentActivity implements OnMapReadyCallback 
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        mMap.setMyLocationEnabled(true);
+*/
     }
-
+/*
     public LatLng getLocationFromAddress(Context context, String strAddress)
     {
         Geocoder coder= new Geocoder(context);
@@ -89,4 +89,5 @@ public class MapaUsuario extends FragmentActivity implements OnMapReadyCallback 
         return p1;
 
     }
+    */
 }
