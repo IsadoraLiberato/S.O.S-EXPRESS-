@@ -9,6 +9,7 @@ import android.widget.Button;
 public class Login extends AppCompatActivity {
 
     Button botaocadastro;
+    Button botaologin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,16 +20,26 @@ public class Login extends AppCompatActivity {
         botaocadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                telamapa ();
+                telaselecionarcadastro ();
             }
 
 
-
         });
+botaologin = (Button) findViewById(R.id.btacessar);
+botaologin.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        telamapa();
+    }
+});
 
     }
-    public void telamapa (){
+    public void telamapa() {
         Intent intent = new Intent(this, MapaUsuario.class);
+        startActivity(intent);
+    }
+    public void telaselecionarcadastro (){
+        Intent intent = new Intent(this, CadastroOficina.class);
         startActivity(intent);
     }
 }

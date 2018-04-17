@@ -8,12 +8,20 @@ import android.location.Geocoder;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.List;
@@ -21,6 +29,7 @@ import java.util.List;
 public class MapaUsuario extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    View markerInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +54,7 @@ public class MapaUsuario extends FragmentActivity implements OnMapReadyCallback 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-/*
+
         // Add a marker in Sydney and move the camera
         LatLng address = getLocationFromAddress(this, "Av. Alm. Alexandrino de Alencar, 708 - Alecrim, Natal - RN, 59030-350, Brasil");
         mMap.addMarker(new MarkerOptions().position(address).title("Estacio"));
@@ -60,20 +69,17 @@ public class MapaUsuario extends FragmentActivity implements OnMapReadyCallback 
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-*/
+
     }
-/*
-    public LatLng getLocationFromAddress(Context context, String strAddress)
-    {
-        Geocoder coder= new Geocoder(context);
+
+    public LatLng getLocationFromAddress(Context context, String strAddress) {
+        Geocoder coder = new Geocoder(context);
         List<Address> address;
         LatLng p1 = null;
 
-        try
-        {
+        try {
             address = coder.getFromLocationName(strAddress, 5);
-            if(address==null)
-            {
+            if (address == null) {
                 return null;
             }
             Address location = address.get(0);
@@ -81,13 +87,17 @@ public class MapaUsuario extends FragmentActivity implements OnMapReadyCallback 
             location.getLongitude();
 
             p1 = new LatLng(location.getLatitude(), location.getLongitude());
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return p1;
 
     }
-    */
 }
+
+
+
+
+
+
+

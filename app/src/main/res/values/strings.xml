@@ -33,4 +33,7 @@
     <string name="senha2">Senha</string>
     <string name="confirmar_senha">Confirmar Senha</string>
     <string name="title_activity_mapa_usuario">Map</string>
+    <string name="t_tulo">Título</string>
+    <string name="descri_o_aqui">Descrição aqui...</string>
+    <string name="todo1">TODO</string>
 </resources>
