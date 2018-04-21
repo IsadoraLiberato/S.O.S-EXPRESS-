@@ -50,14 +50,15 @@
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_acessar"
         android:layout_width="154dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
         android:background="@drawable/btacessar"
+        android:onClick="fazerLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.042"
@@ -66,14 +67,15 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btcds"
+        android:id="@+id/btn_cadastro"
         android:layout_width="154dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/btcadastro"
+        android:onClick="telaOpcao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.954"
