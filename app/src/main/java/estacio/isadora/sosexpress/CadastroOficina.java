@@ -33,7 +33,6 @@ public class CadastroOficina extends AppCompatActivity {
         }); }
 
 
-
     public void cadastro_oficina() {
         Intent intent = new Intent(this, CdsOficina.class);
         startActivity(intent);
