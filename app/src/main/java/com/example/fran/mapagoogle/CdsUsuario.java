@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fran.mapagoogle.entidade.Usuario;
 import com.example.fran.mapagoogle.util.Preferences;
 
 public class CdsUsuario extends AppCompatActivity {
@@ -34,16 +35,28 @@ public class CdsUsuario extends AppCompatActivity {
     }
 
     public void cadastraUser(View view){
+        String nome = edt_nome_usu.getText().toString();
+        String cpf  = edt_cpf_usu.getText().toString();
         String email = edt_email_usu.getText().toString();
         String senha = edt_senha_usu.getText().toString();
+        String confS = edt_senhaConfirm_usu.getText().toString();
+
+        Usuario user = new Usuario();
+        user.setNome(nome);
+        user.setCpf(cpf);
+        user.setEmail(email);
+        user.setSenha(senha);
+        user.setConfirmSen(confS);
+
 
         Preferences preferences = new Preferences(this);
-        preferences.salvarDados(email,senha);
+        preferences.salvarDados(user.getEmail(),user.getSenha());
 
-        Toast.makeText(this, "Email: "+preferences.getEmailCliente()+"Senha: "+preferences.getSenhaCliente(),Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Email: "+preferences.getEmailCliente()+" Senha: "+preferences.getSenhaCliente(),Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(CdsUsuario.this, Login.class);
         startActivity(intent);
 
     }
+
 }

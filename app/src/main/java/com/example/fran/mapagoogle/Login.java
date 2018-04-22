@@ -5,11 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.fran.mapagoogle.util.Preferences;
 
 public class Login extends AppCompatActivity {
 
+    private EditText edt_email;
+    private EditText edt_senha;
     private Button btn_acessar;
     private Button btn_cadastro;
 
@@ -20,10 +23,17 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        edt_email =  findViewById(R.id.edt_email_login);
+        edt_senha =  findViewById(R.id.edt_senha_login);
         btn_acessar =  findViewById(R.id.btn_acessar);
         btn_cadastro =  findViewById(R.id.btn_cadastro);
 
         verificaSeEstaLogado();
+    }
+
+    public void fazerLogin(View view)
+    {
+
     }
 
 
@@ -51,4 +61,5 @@ public class Login extends AppCompatActivity {
             telamapa();
         }
     }
+
 }
