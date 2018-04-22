@@ -24,7 +24,7 @@
     <string name="cadastro_para_usu_rios">Cadastro para Usuários</string>
     <string name="nome">Nome</string>
     <string name="data_de_nascimento">Data de Nascimento</string>
-    <string name="cpf">CPF</string>
+    <string name="cpf" translatable="false">CPF</string>
     <string name="rua">Rua</string>
     <string name="n_mero">Número</string>
     <string name="cep">CEP</string>

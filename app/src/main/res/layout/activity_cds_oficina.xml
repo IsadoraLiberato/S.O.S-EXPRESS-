@@ -44,13 +44,13 @@
         app:layout_constraintVertical_bias="0.131" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edt_rua_ofic"
         android:layout_width="291dp"
         android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="textPersonName"
@@ -63,13 +63,13 @@
         tools:ignore="LabelFor" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/edt_cep_ofic"
         android:layout_width="229dp"
         android:layout_height="26dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="textPostalAddress"
@@ -100,19 +100,19 @@
         app:layout_constraintVertical_bias="0.212" />
 
     <EditText
-        android:id="@+id/editText6"
-        android:layout_width="97dp"
+        android:id="@+id/edt_numero_ofic"
+        android:layout_width="195dp"
         android:layout_height="26dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.319"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.213"
@@ -137,13 +137,13 @@
         app:layout_constraintVertical_bias="0.293" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/edt_bairro_ofic"
         android:layout_width="217dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="textPersonName"
@@ -193,13 +193,13 @@
         app:layout_constraintVertical_bias="0.451" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edt_nomeF_ofic"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="textPersonName"
@@ -230,13 +230,13 @@
         app:layout_constraintVertical_bias="0.527" />
 
     <EditText
-        android:id="@+id/editText9"
+        android:id="@+id/edt_tel_ofic"
         android:layout_width="214dp"
         android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="phone"
@@ -268,13 +268,13 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText11"
+        android:id="@+id/edt_cnpj_ofic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="number"
@@ -305,13 +305,13 @@
         app:layout_constraintVertical_bias="0.676" />
 
     <EditText
-        android:id="@+id/editText12"
+        android:id="@+id/edt_email_ofic"
         android:layout_width="267dp"
         android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="textEmailAddress"
@@ -343,13 +343,13 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editText13"
+        android:id="@+id/edt_senha_ofic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="textPassword"
@@ -362,13 +362,13 @@
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_cad_oficina"
         android:layout_width="298dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/confcds"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

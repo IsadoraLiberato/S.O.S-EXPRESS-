@@ -11,7 +11,7 @@ public class Preferences {
     private final int MODE = 0;
     private SharedPreferences.Editor editor;
 
-    private static final String NOME_CLIENTE = "email_cliente";
+    private static final String EMAIL_CLIENTE = "email_cliente";
     private static final String SENHA_CLIENTE = "senha_cliente";
 
 
@@ -25,14 +25,15 @@ public class Preferences {
 
     public void salvarDados( String email_cliente, String senha_cliente ){
 
-        editor.putString(NOME_CLIENTE, email_cliente);
+        editor.putString(EMAIL_CLIENTE, email_cliente);
         editor.putString(SENHA_CLIENTE, senha_cliente);
         editor.commit();
 
     }
 
-    public String getNomeCliente(){
-        return preferences.getString(NOME_CLIENTE, null);
+
+    public String getEmailCliente(){
+        return preferences.getString(EMAIL_CLIENTE, null);
     }
 
     public String getSenhaCliente(){

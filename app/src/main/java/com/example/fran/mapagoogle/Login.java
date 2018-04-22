@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.fran.mapagoogle.util.Preferences;
+
 public class Login extends AppCompatActivity {
 
     private Button btn_acessar;
     private Button btn_cadastro;
+
+    Preferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +23,9 @@ public class Login extends AppCompatActivity {
         btn_acessar =  findViewById(R.id.btn_acessar);
         btn_cadastro =  findViewById(R.id.btn_cadastro);
 
+        verificaSeEstaLogado();
     }
 
-    public void fazerLogin(View view){
-        telamapa();
-    }
 
     public void telaOpcao(View view){
         telaEscolhaCadastro();
@@ -37,5 +39,16 @@ public class Login extends AppCompatActivity {
     private void telamapa (){
         Intent intent = new Intent(Login.this, ActPrincipal.class);
         startActivity(intent);
+     }
+
+    private void verificaSeEstaLogado(){
+        preferences = new Preferences(this);
+
+        String email = preferences.getEmailCliente();
+        String senha = preferences.getSenhaCliente();
+
+        if(email != null && senha != null){
+            telamapa();
+        }
     }
 }

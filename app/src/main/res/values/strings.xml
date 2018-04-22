@@ -13,4 +13,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login_activity">Login do usuário</string>
     <string name="title_activity_mapa_minha_posicao">Map</string>
+    <string name="cpf">cpf</string>
 </resources>
