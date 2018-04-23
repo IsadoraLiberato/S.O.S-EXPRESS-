@@ -94,11 +94,14 @@ public class CdsOficina extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     Oficina oficina = response.body();
-                    String teste = oficina.getRua();
+                   // Log.i("AppOficina", "Response = "+response);
+                    //Log.i("AppOficina", "Body = "+response.body());
+
+                     String rua =  oficina.getBairro();
+                     Log.i("AppOficina", "Body = "+rua);
                     //verifica aqui se o corpo da resposta não é nulo
                     if (oficina != null) {
 
-                        Log.e("AppOficina", "Obj não é nulo Rua = "+teste);
 
                         //resOficina.setRua(oficina.getRua());
 
