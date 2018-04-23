@@ -3,15 +3,15 @@ package com.example.fran.mapagoogle;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.fran.mapagoogle.GeneratoRetrofit.RetrofitServiceGenerator;
+import com.example.fran.mapagoogle.RestClient.RetrofitService;
 import com.example.fran.mapagoogle.entidade.Oficina;
-import com.example.fran.mapagoogle.service.RespostaServidor;
-import com.example.fran.mapagoogle.service.RetrofitService;
-import com.example.fran.mapagoogle.service.ServiceGenerator;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -20,126 +20,110 @@ import retrofit2.Response;
 
 public class CdsOficina extends AppCompatActivity {
 
-    private EditText edt_rua_ofic;
-    private EditText edt_numero_ofic;
-    private EditText edt_bairro_ofic;
-    private EditText edt_cep_ofic;
-    private EditText edt_nomeF_ofic;
-    private EditText edt_telefone_ofic;
-    private EditText edt_cnpj_ofic;
-    private EditText edt_email_ofic;
-    private Button btn_cad_ofic;
-    private ProgressDialog progress;
+    private EditText edt_rua;
+    private  EditText edt_numero;
+    private  EditText edt_bairro;
+    private EditText edt_cep;
+    private  EditText edt_nomeFantasia;
+    private  EditText edt_telefone;
+    private  EditText edt_cnpj;
+    private  EditText edt_email;
+    private  EditText edt_senha;
 
-    private Oficina oficina;
-
-    RespostaServidor resposta = new RespostaServidor();
-
+    Oficina resOficina = new Oficina();
+    Button cadOficina;
+    ProgressDialog progress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cds_oficina);
 
-        edt_rua_ofic = findViewById(R.id.edt_rua_ofic);
-        edt_numero_ofic = findViewById(R.id.edt_numero_ofic);
-        edt_bairro_ofic = findViewById(R.id.edt_bairro_ofic);
-        edt_cep_ofic = findViewById(R.id.edt_cep_ofic);
-        edt_nomeF_ofic = findViewById(R.id.edt_nomeF_ofic);
-        edt_telefone_ofic = findViewById(R.id.edt_cnpj_ofic);
-        edt_cnpj_ofic = findViewById(R.id.edt_rua_ofic);
-        edt_email_ofic = findViewById(R.id.edt_email_ofic);
-        btn_cad_ofic = findViewById(R.id.btn_cad_oficina);
+        cadOficina = (Button)findViewById(R.id.btn_cad_oficina);
 
-        listenersButtons();
-
-    }
-
-    public void listenersButtons() {
-
-        btn_cad_ofic.setOnClickListener(new View.OnClickListener() {
+        cadOficina.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+               //Pegar as variaveis
+                edt_rua =(EditText)findViewById(R.id.edt_rua_ofic);
+                edt_numero =(EditText)findViewById(R.id.edt_numero_ofic);
+                edt_bairro=(EditText)findViewById(R.id.edt_bairro_ofic);
+                edt_cep=(EditText)findViewById(R.id.edt_cep_ofic);
+                edt_nomeFantasia=(EditText)findViewById(R.id.edt_nomeF_ofic);
+                edt_telefone=(EditText)findViewById(R.id.edt_tel_ofic);
+                edt_cnpj=(EditText)findViewById(R.id.edt_cnpj_ofic);
+                edt_email=(EditText)findViewById(R.id.edt_email_ofic);
+                edt_senha=(EditText)findViewById(R.id.edt_senha_ofic);
 
-                progress = new ProgressDialog(getApplicationContext());
-                progress.setTitle("enviando...");
+                String rua = edt_rua.getText().toString();
+                String numero = edt_numero.getText().toString();
+                int numeroFinal = Integer.parseInt(numero);
+                String bairro =edt_bairro.getText().toString();
+                String cep =edt_cep.getText().toString();
+                String nomeFantasia =edt_nomeFantasia.getText().toString();
+                String telefone =edt_telefone.getText().toString();
+                String cnpj =edt_cnpj.getText().toString();
+                String email =edt_email.getText().toString();
+                String senha =edt_senha.getText().toString();
+
+                //Chamada do metodo do retrofit
+                retrofitConverter( rua, numeroFinal, bairro,cep,nomeFantasia,telefone, cnpj,email,senha);
+
+                //Chamando o progress
+                progress = new ProgressDialog(CdsOficina.this);
+                progress.setTitle("Salavando dados..... ");
                 progress.show();
-
-                oficina = new Oficina();
-                oficina.setRua(edt_rua_ofic.getText().toString());
-                oficina.setNumero(Integer.valueOf(edt_numero_ofic.getText().toString()));
-                oficina.setBairro(edt_bairro_ofic.getText().toString());
-                oficina.setCep(edt_cep_ofic.getText().toString());
-                oficina.setNome(edt_nomeF_ofic.getText().toString());
-                oficina.setTelefone(edt_telefone_ofic.getText().toString());
-                oficina.setCnpj(edt_cnpj_ofic.getText().toString());
-                oficina.setEmail(edt_email_ofic.getText().toString());
-
-
-
-                //chama o retrofit para fazer a requisição no webservice
-                retrofitConverter(oficina);
-
             }
         });
+
     }
 
+    public void retrofitConverter( String rua,int numero, String bairro,String cep,String nFantasia,String telefone, String cnpj,String email,String senha) {
 
-    public void retrofitConverter(Oficina oficina) {
+        RetrofitService service = RetrofitServiceGenerator.createService(RetrofitService.class);
 
-        RetrofitService service = ServiceGenerator.createService(RetrofitService.class);
+        Call<Oficina> call = service.cadastarOficinas(rua,numero, bairro,cep,nFantasia,telefone,cnpj,email,senha);
 
-        Call<RespostaServidor> call = service.converterUnidade(oficina);
-
-        call.enqueue(new Callback<RespostaServidor>() {
+        call.enqueue(new Callback<Oficina>() {
             @Override
-            public void onResponse(Call<RespostaServidor> call, Response<RespostaServidor> response) {
-
+            public void onResponse(Call<Oficina> call, Response<Oficina> response) {
                 if (response.isSuccessful()) {
 
-                    RespostaServidor respostaServidor = response.body();
-
+                    Oficina oficina = response.body();
+                    String teste = oficina.getRua();
                     //verifica aqui se o corpo da resposta não é nulo
-                    if (respostaServidor != null) {
+                    if (oficina != null) {
+
+                        Log.e("AppOficina", "Obj não é nulo Rua = "+teste);
+
+                        //resOficina.setRua(oficina.getRua());
 
 
-                  if(respostaServidor.isValid()) {
+                        progress.dismiss();
 
-                            resposta.setFrom_type(respostaServidor.getFrom_type());
-                            resposta.setFrom_value(respostaServidor.getFrom_value());
-                            resposta.setResult(respostaServidor.getResult());
-                            resposta.setTo_type(respostaServidor.getTo_type());
-                            resposta.setValid(respostaServidor.isValid());
-
-                            progress.dismiss();
-
-
-                        } else{
-
-                            Toast.makeText(getApplicationContext(),"Insira unidade e valores válidos", Toast.LENGTH_SHORT).show();
-                        }
 
                     } else {
-
-                        Toast.makeText(getApplicationContext(),"Resposta nula do servidor", Toast.LENGTH_SHORT).show();
+                        progress.dismiss();
+                        Toast.makeText(getApplicationContext(), "Resposta nula do servidor", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
 
-                    Toast.makeText(getApplicationContext(),"Resposta não foi sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Resposta não foi sucesso", Toast.LENGTH_SHORT).show();
                     // segura os erros de requisição
                     ResponseBody errorBody = response.errorBody();
+                    progress.dismiss();
                 }
 
-                progress.dismiss();
             }
-
             @Override
-            public void onFailure(Call<RespostaServidor> call, Throwable t) {
-
-                Toast.makeText(getApplicationContext(),"Erro na chamada ao servidor", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<Oficina> call, Throwable t) {
+                Log.e("AppCep", "Não foi possível recuperar o Cep", t);
+                progress.dismiss();
             }
         });
 
+
     }
+
 
 }

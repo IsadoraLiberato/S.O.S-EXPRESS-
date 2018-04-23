@@ -1,4 +1,4 @@
-package com.example.fran.mapagoogle.service;
+package com.example.fran.mapagoogle.GeneratoRetrofit;
 
 import com.google.gson.Gson;
 
@@ -9,13 +9,17 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ServiceGenerator {
+/**
+ * Created by handerson on 22/04/18.
+ */
 
-    public static final String API_BASE_URL = "http://jhsdev.com/index.php/api/";
-
-    public static <S> S createService(Class<S> serviceClass) {
+public class RetrofitServiceGenerator {
+    //URL base do endpoint. Deve sempre terminar com /
+    public static final String API_BASE_URL ="http://jhsdev.com/index.php/api/";
+    public static <S> S createService( Class<S> serviceClass) {
 
         //Instancia do interceptador das requisições
+
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -24,8 +28,8 @@ public class ServiceGenerator {
 
         httpClient.addInterceptor(loggingInterceptor);
 
-
         //Instância do retrofit
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(API_BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
