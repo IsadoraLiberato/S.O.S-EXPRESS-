@@ -36,7 +36,7 @@ public class MapaUsuario extends SupportMapFragment implements OnMapReadyCallbac
     private GoogleMap mMap;
     private ProgressDialog progress;
     private List<Oficina> listaOficinas;
-
+    LatLng posicao;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,23 +55,9 @@ public class MapaUsuario extends SupportMapFragment implements OnMapReadyCallbac
         mMap = googleMap;
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.setMinZoomPreference(12);
+        LatLng camera = new LatLng(-5.7792569,-35.200916);
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(camera));
 
-        for(Oficina oficina : retornaOficinas()){
-
-            // Add a marker in Sydney and move the camera
-            LatLng posicao = getLocationFromAddress(getContext(),
-                    oficina.getRua()+", "+oficina.getNumero()+", "+oficina.getBairro()+", "+"Natal - RN,"+oficina.getCep()+", "+"Brasil");
-
-            mMap.addMarker(new MarkerOptions().position(posicao).title(oficina.getNome()));
-        }
-
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.setMinZoomPreference(12);
-        // Add a marker in Sydney and move the camera
-        LatLng posicao = getLocationFromAddress(getContext(), "Av. Alm. Alexandrino de Alencar, 708 - Alecrim, Natal - RN, 59030-350, Brasil");
-        mMap.addMarker(new MarkerOptions().position(posicao).title("Estacio"));
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(posicao));
 
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -82,6 +68,13 @@ public class MapaUsuario extends SupportMapFragment implements OnMapReadyCallbac
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
             return;
+        }
+        for(Oficina oficina : retornaOficinas()){
+
+            // Add a marker in Sydney and move the camera
+            posicao = getLocationFromAddress(getContext(),oficina.getRua()+", "+oficina.getNumero()+" - "+oficina.getBairro()+", "+"Natal - RN,"+oficina.getCep()+", "+"Brasil");
+
+            mMap.addMarker(new MarkerOptions().position(posicao).title(oficina.getNome()));
         }
         mMap.setMyLocationEnabled(true);
 
@@ -129,8 +122,7 @@ public class MapaUsuario extends SupportMapFragment implements OnMapReadyCallbac
                     listaOficinas = response.body();
                     AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
                     alert.setTitle("Dados");
-                    alert.setMessage("Nome oficina: "+listaOficinas.get(8).getNome()
-                       +"\n Rua: "+listaOficinas.get(8).getRua());
+                    alert.setMessage(listaOficinas.get(0).toString());
                     alert.show();
                 }
             }
