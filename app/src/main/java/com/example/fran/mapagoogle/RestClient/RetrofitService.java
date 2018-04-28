@@ -2,9 +2,12 @@ package com.example.fran.mapagoogle.RestClient;
 
 import com.example.fran.mapagoogle.entidade.Oficina;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 /**
@@ -26,4 +29,7 @@ public interface RetrofitService {
                                    @Field("telefone") String telefone,
                                    @Field("email") String email,
                                    @Field("senha") String senha);
+    @GET("oficina")
+    Call<List<Oficina>> getOficinas();
+
 }

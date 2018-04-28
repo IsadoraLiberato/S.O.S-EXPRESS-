@@ -1,7 +1,6 @@
 package com.example.fran.mapagoogle;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,9 +40,6 @@ public class CdsOficina extends AppCompatActivity {
 
         cadOficina = (Button)findViewById(R.id.btn_cad_oficina);
 
-
-
-
         cadOficina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +76,6 @@ public class CdsOficina extends AppCompatActivity {
         });
 
     }
-
 
     public void retrofitConverter( String rua,int numero, String bairro,String cep,String nFantasia,String telefone, String cnpj,String email,String senha) {
 
@@ -132,7 +127,6 @@ public class CdsOficina extends AppCompatActivity {
 
 
     }
-
 
 
 }
