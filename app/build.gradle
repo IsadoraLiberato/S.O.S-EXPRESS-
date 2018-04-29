@@ -29,9 +29,15 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     //Retrofit
+<<<<<<< HEAD
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.4.0'
+=======
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.0'
+>>>>>>> upstream/master
 
     //google play services
     implementation 'com.google.android.gms:play-services-maps:15.0.0'
