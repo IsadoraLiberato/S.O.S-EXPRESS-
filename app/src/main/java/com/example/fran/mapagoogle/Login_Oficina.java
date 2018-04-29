@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import com.example.fran.mapagoogle.util.Preferences;
 
-public class Login extends AppCompatActivity {
+public class Login_Oficina extends AppCompatActivity {
 
     private EditText edt_email;
     private EditText edt_senha;
@@ -21,7 +21,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_oficina);
 
         edt_email =  findViewById(R.id.edt_email_login);
         edt_senha =  findViewById(R.id.edt_senha_login);
@@ -42,12 +42,12 @@ public class Login extends AppCompatActivity {
     }
 
     private void telaEscolhaCadastro(){
-        Intent intent = new Intent(Login.this, CadastroOficina.class);
+        Intent intent = new Intent(Login_Oficina.this, CdsOficina.class);
         startActivity(intent);
     }
 
     private void telamapa (){
-        Intent intent = new Intent(Login.this, ActPrincipal.class);
+        Intent intent = new Intent(Login_Oficina.this, ActPrincipal.class);
         startActivity(intent);
      }
 

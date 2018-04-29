@@ -54,7 +54,7 @@ public class CdsUsuario extends AppCompatActivity {
 
         Toast.makeText(this, "Email: "+preferences.getEmailCliente()+" Senha: "+preferences.getSenhaCliente(),Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(CdsUsuario.this, Login.class);
+        Intent intent = new Intent(CdsUsuario.this, Login_Oficina.class);
         startActivity(intent);
 
     }

@@ -7,11 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.EditText;
-
-import com.example.fran.mapagoogle.util.Preferences;
 
 
 public class ActPrincipal extends AppCompatActivity {
@@ -51,7 +47,7 @@ public class ActPrincipal extends AppCompatActivity {
                 editor.remove("senha_cliente");
                 editor.commit();
                 finish();
-                Intent intent = new Intent(ActPrincipal.this, Login.class);
+                Intent intent = new Intent(ActPrincipal.this, Login_Oficina.class);
                 startActivity(intent);
                 break;
         }
