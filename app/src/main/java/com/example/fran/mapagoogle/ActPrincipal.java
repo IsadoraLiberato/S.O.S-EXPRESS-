@@ -1,13 +1,26 @@
 package com.example.fran.mapagoogle;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.fran.mapagoogle.util.Preferences;
+
 
 
 public class ActPrincipal extends AppCompatActivity {
@@ -27,6 +40,7 @@ public class ActPrincipal extends AppCompatActivity {
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.container, new MapaUsuario(), "MapaUsuario");
         transaction.commitAllowingStateLoss();
+
 
     }
 
@@ -54,4 +68,7 @@ public class ActPrincipal extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }

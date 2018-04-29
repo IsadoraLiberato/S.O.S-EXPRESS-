@@ -5,8 +5,11 @@ public class Usuario {
     private String nome;
     private String cpf;
     private String email;
+    private String telefone;
     private String senha;
     private String confirmSen;
+    private String created_at;
+    private String updated_at;
 
     public int getId() {
         return id;
@@ -40,6 +43,14 @@ public class Usuario {
         this.email = email;
     }
 
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
     public String getSenha() {
         return senha;
     }
@@ -54,5 +65,21 @@ public class Usuario {
 
     public void setConfirmSen(String confirmSen) {
         this.confirmSen = confirmSen;
+    }
+
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(String updated_at) {
+        this.updated_at = updated_at;
     }
 }
