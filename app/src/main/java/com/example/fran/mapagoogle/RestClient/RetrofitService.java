@@ -10,6 +10,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by handerson on 23/04/18.
@@ -29,15 +30,23 @@ public interface RetrofitService {
                                    @Field("cnpj") String cnpj,
                                    @Field("telefone") String telefone,
                                    @Field("email") String email,
+    
                                    @Field("senha") String senha);
+  //retornar oficinas
     @GET("oficina")
     Call<List<Oficina>> getOficinas();
 
+  //cadastrar clientes
     @POST("clientes")
     Call<Usuario> cadastrarCliente(@Field("nome") String nome,
                                    @Field("email") String email,
                                    @Field("telefone") String telefone,
                                    @Field("cpf") String cpf,
                                    @Field("senha") String senha);
+
+//buscar clientes por email
+    @GET("cliente/{email}")
+    Call<Usuario> getCliente(@Path("email") String email);
+
 
 }

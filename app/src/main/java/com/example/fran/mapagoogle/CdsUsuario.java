@@ -12,8 +12,11 @@ import android.widget.Toast;
 
 import com.example.fran.mapagoogle.GeneratoRetrofit.RetrofitServiceGenerator;
 import com.example.fran.mapagoogle.RestClient.RetrofitService;
+import com.example.fran.mapagoogle.entidade.Oficina;
 import com.example.fran.mapagoogle.entidade.Usuario;
 import com.example.fran.mapagoogle.util.Preferences;
+
+import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -24,10 +27,13 @@ public class CdsUsuario extends AppCompatActivity {
     private EditText edt_nome_usu;
     private EditText edt_cpf_usu;
     private EditText edt_email_usu;
+    private EditText edt_telefone_usu;
     private EditText edt_senha_usu;
     private EditText edt_senhaConfirm_usu;
     private Button btn_cad_usu;
     private ProgressDialog progress;
+
+    ProgressDialog progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,7 @@ public class CdsUsuario extends AppCompatActivity {
         edt_nome_usu = findViewById(R.id.edt_nome_usu);
         edt_cpf_usu = findViewById(R.id.edt_cpf_usu);
         edt_email_usu = findViewById(R.id.edt_email_usu);
+        edt_telefone_usu = findViewById(R.id.edt_telefone_usu);
         edt_senha_usu = findViewById(R.id.edt_senha_usu);
         edt_senhaConfirm_usu = findViewById(R.id.edt_confirmS_usu);
         btn_cad_usu = findViewById(R.id.btn_cad_usu);
@@ -50,6 +57,7 @@ public class CdsUsuario extends AppCompatActivity {
         String nome = edt_nome_usu.getText().toString();
         String cpf  = edt_cpf_usu.getText().toString();
         String email = edt_email_usu.getText().toString();
+        String telefone = edt_telefone_usu.getText().toString();
         String senha = edt_senha_usu.getText().toString();
         String confS = edt_senhaConfirm_usu.getText().toString();
 
@@ -57,11 +65,13 @@ public class CdsUsuario extends AppCompatActivity {
         user.setNome(nome);
         user.setCpf(cpf);
         user.setEmail(email);
+        user.setTelefone(telefone);
         user.setSenha(senha);
         user.setConfirmSen(confS);
         String tel = "1111111";
 
         cadastraCliente(user.getNome(),user.getEmail(),tel,user.getCpf(),user.getSenha());
+
 
         Preferences preferences = new Preferences(this);
         preferences.salvarDados(user.getEmail(),user.getSenha());
@@ -76,6 +86,64 @@ public class CdsUsuario extends AppCompatActivity {
         progress = new ProgressDialog(CdsUsuario.this);
         progress.setTitle("Salavando dados..... ");
         progress.show();
+
+        //Chamando o progress
+        progress = new ProgressDialog(CdsUsuario.this);
+        progress.setTitle("Salavando dados..... ");
+        progress.show();
+
+    }
+
+    public void cadastraCliente( String nome,String email, String telefone,String cpf,String senha) {
+
+        RetrofitService service = RetrofitServiceGenerator.createService(RetrofitService.class);
+
+        Call<Usuario> call = service.cadastrarCliente(nome,email, telefone,cpf,senha);
+
+        call.enqueue(new Callback<Usuario>() {
+            private Call<Usuario> call;
+            private Response<Usuario> response;
+
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                this.call = call;
+                this.response = response;
+                if (response.isSuccessful()) {
+
+                    Usuario usuario = response.body();
+
+                    Toast.makeText(CdsUsuario.this, "NomeCli: "+usuario.getNome(), Toast.LENGTH_SHORT).show();
+                    String rua =  usuario.getNome();
+                    Log.i("AppCliente", "Body = "+rua);
+                    //verifica aqui se o corpo da resposta não é nulo
+                    if (usuario != null) {
+
+                        //resOficina.setRua(oficina.getRua());
+
+                        progress.dismiss();
+
+
+                    } else {
+                        progress.dismiss();
+                        Toast.makeText(getApplicationContext(), "Resposta nula do servidor", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), "Resposta não foi sucesso", Toast.LENGTH_SHORT).show();
+                    // segura os erros de requisição
+                    ResponseBody errorBody = response.errorBody();
+                    progress.dismiss();
+                }
+
+            }
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+                Log.e("AppCep", "Não foi possível recuperar o Cep", t);
+                progress.dismiss();
+            }
+        });
+
 
     }
 

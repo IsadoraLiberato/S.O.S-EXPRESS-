@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context="com.example.fran.mapagoogle.Login">
+    tools:context="estacio.isadora.sosexpress.Login">
 
 
 
     <EditText
         android:id="@+id/edtsenha"
         android:layout_width="346dp"
-        android:layout_height="wrap_content" />
+        android:inputType="" />
 
     <EditText
         android:id="@+id/edt_email_login"
@@ -39,6 +39,7 @@
     <EditText
         android:id="@+id/edt_senha_login"
         android:layout_width="350dp"
+        android:inputType="">>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -55,10 +56,13 @@
         app:layout_constraintVertical_bias="0.793"
         tools:ignore="LabelFor" />
 
-    <Button android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+    <Button android:layout_height=""
+        android:layout_width="" />
 
-        <Button android:id="@+id/btacessar"
+        android:id="@+id/btacessar" 
+
+        android:id="@+id/btn_acessar"
+ a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
         android:layout_width="154dp"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
