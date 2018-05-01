@@ -75,9 +75,9 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
         getMapAsync(this);
 
         //Chamando o progress
-        /*progress = new ProgressDialog(getContext());
+        progress = new ProgressDialog(getContext());
         progress.setTitle("Aguarde..... ");
-        progress.show();*/
+        progress.show();
 
 
     }
@@ -180,7 +180,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
         //Verifica se a lista estar vazia(So para testar)
         if(listOficinasMap.isEmpty()){
             Toast.makeText(getContext(),"Não foi possivel buscar as oficinas",Toast.LENGTH_LONG).show();
-
+            progress.dismiss();
 
         }else {
             Toast.makeText(getContext(), "Oficinas encontradas", Toast.LENGTH_LONG).show();
@@ -194,8 +194,8 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
                         oficina.getRua()+", "+oficina.getNumero()+", "+oficina.getBairro()+", "+"Natal - RN,"+oficina.getCep()+", "+"Brasil");
 
 
-                    //add market
-                    mMap.addMarker(new MarkerOptions().position(posicao).title(oficina.getNome()));
+                //add market
+                mMap.addMarker(new MarkerOptions().position(posicao).title(oficina.getNome()));
 
 
 
@@ -218,7 +218,8 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             markerOptions.title("Localização atual");
             markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
             currentLocationMaker = mMap.addMarker(markerOptions);
-
+            progress.dismiss();
+            
             //Move to new location
             CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(currentLocationLatLong).build();
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
@@ -226,7 +227,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
         }else{
             Toast.makeText(getContext(), "Não foi possivel obter sua posição", Toast.LENGTH_SHORT).show();
-
+            progress.dismiss();
         }
 
       /*  LocationData locationData = new LocationData(location.getLatitude(), location.getLongitude());
