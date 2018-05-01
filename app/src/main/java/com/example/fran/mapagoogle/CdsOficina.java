@@ -1,6 +1,7 @@
 package com.example.fran.mapagoogle;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -92,8 +93,8 @@ public class CdsOficina extends AppCompatActivity {
                    // Log.i("AppOficina", "Response = "+response);
                     //Log.i("AppOficina", "Body = "+response.body());
 
-                     String rua =  oficina.getBairro();
-                     Log.i("AppOficina", "Body = "+rua);
+                     //String rua =  oficina.getBairro();
+                     //Log.i("AppOficina", "Body = "+rua);
                     //verifica aqui se o corpo da resposta não é nulo
                     if (oficina != null) {
 
@@ -102,6 +103,9 @@ public class CdsOficina extends AppCompatActivity {
 
 
                         progress.dismiss();
+                        Intent intent = new Intent(CdsOficina.this, Login.class);
+                        startActivity(intent);
+                        finish();
 
 
                     } else {
@@ -120,8 +124,12 @@ public class CdsOficina extends AppCompatActivity {
             }
             @Override
             public void onFailure(Call<Oficina> call, Throwable t) {
-                Log.e("AppCep", "Não foi possível recuperar o Cep", t);
+                Log.e("NotRetorn", "Não tivemos retorno da API", t);
                 progress.dismiss();
+                Intent intent = new Intent(CdsOficina.this, Login.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 

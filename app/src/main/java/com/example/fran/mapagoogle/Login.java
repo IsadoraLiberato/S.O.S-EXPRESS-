@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
 
     public void fazerLogin(View view)
     {
-
+        this.telamapa ();
     }
 
 
@@ -44,11 +44,14 @@ public class Login extends AppCompatActivity {
     private void telaEscolhaCadastro(){
         Intent intent = new Intent(Login.this, CadastroOficina.class);
         startActivity(intent);
+        finish();
     }
 
     private void telamapa (){
         Intent intent = new Intent(Login.this, ActPrincipal.class);
         startActivity(intent);
+        finish();
+
      }
 
     private void verificaSeEstaLogado(){
@@ -60,6 +63,27 @@ public class Login extends AppCompatActivity {
         if(email != null && senha != null){
             telamapa();
         }
+    }
+    private boolean validaCampos(String email, String senha){
+        boolean result = true;
+
+        if("".equals(email) || email == null){
+            edt_email.setError("Campo obrigatório");
+            result = false;
+        }
+        if(("".equals(email) || email == null) && ("".equals(senha) || senha == null)){
+            edt_email.setError("Campo obrigatório");
+            edt_senha.setError("Campo obrigatório");
+            result = false;
+        }
+        if ("".equals(senha) || senha == null){
+            edt_senha.setError("Campo obrigatório");
+            result = false;
+        }
+
+
+        return  result;
+
     }
 
 }

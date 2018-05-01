@@ -1,6 +1,7 @@
 package com.example.fran.mapagoogle.RestClient;
 
 import com.example.fran.mapagoogle.entidade.Oficina;
+import com.example.fran.mapagoogle.entidade.Usuario;
 
 import java.util.List;
 
@@ -31,5 +32,12 @@ public interface RetrofitService {
                                    @Field("senha") String senha);
     @GET("oficina")
     Call<List<Oficina>> getOficinas();
+
+    @POST("clientes")
+    Call<Usuario> cadastrarCliente(@Field("nome") String nome,
+                                   @Field("email") String email,
+                                   @Field("telefone") String telefone,
+                                   @Field("cpf") String cpf,
+                                   @Field("senha") String senha);
 
 }

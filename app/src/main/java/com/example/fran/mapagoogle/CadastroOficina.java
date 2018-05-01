@@ -24,11 +24,13 @@ public class CadastroOficina extends AppCompatActivity {
     public void telaCadOficina(View view){
         Intent intent = new Intent(CadastroOficina.this, CdsOficina.class);
         startActivity(intent);
+        finish();
     }
 
     public void telaCadUsuario(View view){
         Intent intent = new Intent(CadastroOficina.this, CdsUsuario.class);
         startActivity(intent);
+        finish();
     }
 
 }
