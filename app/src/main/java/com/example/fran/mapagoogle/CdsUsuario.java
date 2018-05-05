@@ -31,6 +31,7 @@ public class CdsUsuario extends AppCompatActivity {
     private EditText edt_senha_usu;
     private EditText edt_senhaConfirm_usu;
     private Button btn_cad_usu;
+    private ProgressDialog progress;
 
     ProgressDialog progress;
 
@@ -48,9 +49,11 @@ public class CdsUsuario extends AppCompatActivity {
         btn_cad_usu = findViewById(R.id.btn_cad_usu);
 
 
+
+
     }
 
-    public void cadastraUser(View view){
+    public void cadastrarUser(View view){
         String nome = edt_nome_usu.getText().toString();
         String cpf  = edt_cpf_usu.getText().toString();
         String email = edt_email_usu.getText().toString();
@@ -65,8 +68,9 @@ public class CdsUsuario extends AppCompatActivity {
         user.setTelefone(telefone);
         user.setSenha(senha);
         user.setConfirmSen(confS);
+        String tel = "1111111";
 
-        cadastraCliente(user.getNome(),user.getEmail(),user.getTelefone(),user.getCpf(),user.getSenha());
+        cadastraCliente(user.getNome(),user.getEmail(),tel,user.getCpf(),user.getSenha());
 
 
         Preferences preferences = new Preferences(this);
@@ -76,6 +80,12 @@ public class CdsUsuario extends AppCompatActivity {
 
         Intent intent = new Intent(CdsUsuario.this, Login.class);
         startActivity(intent);
+        finish();
+
+        //Chamando o progress
+        progress = new ProgressDialog(CdsUsuario.this);
+        progress.setTitle("Salavando dados..... ");
+        progress.show();
 
         //Chamando o progress
         progress = new ProgressDialog(CdsUsuario.this);
@@ -136,5 +146,60 @@ public class CdsUsuario extends AppCompatActivity {
 
 
     }
+
+    public void cadastraCliente( String nome,String email, String telefone,String cpf,String senha) {
+
+        RetrofitService service = RetrofitServiceGenerator.createService(RetrofitService.class);
+
+        Call<Usuario> call = service.cadastrarCliente(nome,email, telefone,cpf,senha);
+
+        call.enqueue(new Callback<Usuario>() {
+            private Call<Usuario> call;
+            private Response<Usuario> response;
+
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                this.call = call;
+                this.response = response;
+                if (response.isSuccessful()) {
+
+                    Usuario usuario = response.body();
+
+                    Toast.makeText(CdsUsuario.this, "NomeCli: "+usuario.getNome(), Toast.LENGTH_SHORT).show();
+                    String rua =  usuario.getNome();
+                    Log.i("AppCliente", "Body = "+rua);
+                    //verifica aqui se o corpo da resposta não é nulo
+                    if (usuario != null) {
+
+                        //resOficina.setRua(oficina.getRua());
+
+                        progress.dismiss();
+
+
+                    } else {
+                        progress.dismiss();
+                        Toast.makeText(getApplicationContext(), "Resposta nula do servidor", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+
+                    Toast.makeText(getApplicationContext(), "Resposta não foi sucesso", Toast.LENGTH_SHORT).show();
+                    // segura os erros de requisição
+                    ResponseBody errorBody = response.errorBody();
+                    progress.dismiss();
+                }
+
+            }
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+                Log.e("AppCep", "Não foi possível recuperar o Cep", t);
+                progress.dismiss();
+            }
+        });
+
+
+    }
+
+
 
 }

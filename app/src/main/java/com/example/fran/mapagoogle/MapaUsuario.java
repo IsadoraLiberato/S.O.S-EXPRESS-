@@ -18,16 +18,15 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
-<<<<<<< HEAD
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-=======
 import android.util.Log;
 import android.widget.Toast;
->>>>>>> 4fd34c4659abce8168f5b6e9aaa6858817283648
+
 
 import com.example.fran.mapagoogle.GeneratoRetrofit.RetrofitServiceGenerator;
 import com.example.fran.mapagoogle.RestClient.RetrofitService;
@@ -58,17 +57,16 @@ import retrofit2.Response;
 public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback,LocationListener {
 
     private GoogleMap mMap;
-<<<<<<< HEAD
-    View markerInfo;
-=======
+
     private ProgressDialog progress;
     private GoogleApiClient googleApiClient;
     private List<Oficina> listaOficinas;
     private Marker currentLocationMaker;
     private Marker locationOficinasMaker;
     private LatLng currentLocationLatLong;
+    private List<Oficina> listOficinasMap;
 
->>>>>>> 4fd34c4659abce8168f5b6e9aaa6858817283648
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,16 +74,14 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
 
         listaOficinas = new ArrayList<>();
-
+        listOficinasMap = retornaOficinas();
 
 
 
         this.callConnection();
-<<<<<<< HEAD
-=======
         this.startGettingLocations();
->>>>>>> upstream/master
-        retornaOficinas();
+        //retornaOficinas();
+      
         getMapAsync(this);
 
         //Chamando o progress
@@ -98,9 +94,11 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
-<<<<<<< HEAD
-        mMap.getUiSettings().setZoomControlsEnabled(true);
+
+
+   /*     mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.setMinZoomPreference(12);
 
         for(Oficina oficina : retornaOficinas()){
@@ -130,13 +128,14 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-<<<<<<< HEAD
-=======
+
+
         mMap.setMyLocationEnabled(true);
->>>>>>> 4fd34c4659abce8168f5b6e9aaa6858817283648
-=======
+*/
+
+
     }
->>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
+
 
     private synchronized void callConnection() {
         Log.i("LOG", "Entrou no callConnection");
@@ -156,15 +155,12 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
         }*/
     }
 
-<<<<<<< HEAD:app/src/main/java/estacio/isadora/sosexpress/MapaUsuario.java
-    public LatLng getLocationFromAddress(Context context, String strAddress) {
-        Geocoder coder = new Geocoder(context);
-=======
+
 
     public LatLng getLocationFromAddress(Context context, String strAddress)
     {
         Geocoder coder= new Geocoder(context);
->>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42:app/src/main/java/com/example/fran/mapagoogle/MapaUsuario.java
+
         List<Address> address;
         LatLng p1 = null;
 
@@ -185,6 +181,13 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+      //getActivity().getFragmentManager().popBackStack();
+
+    }
+
     public List<Oficina> retornaOficinas() {
 
         RetrofitService service = RetrofitServiceGenerator.createService(RetrofitService.class);
@@ -198,11 +201,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
                 if (response.isSuccessful()){
                     listaOficinas = response.body();
                     Toast.makeText(getContext(),"Chamada das oficinas OK",Toast.LENGTH_SHORT).show();
-                    //AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-                   // alert.setTitle("Dados");
-                   // alert.setMessage("Nome oficina: "+listaOficinas.get(8).getNome()
-                   //    +"\n Rua: "+listaOficinas.get(8).getRua());
-                    //alert.show();
+
                 }
             }
 
@@ -219,31 +218,35 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
     @Override
     public void onLocationChanged(Location location) {
         //pegar todas as oficinas
-        List<Oficina> listOficinasMap = retornaOficinas();
+        listOficinasMap = retornaOficinas();
 
         //Verifica se a lista estar vazia(So para testar)
         if(listOficinasMap.isEmpty()){
             Toast.makeText(getContext(),"Não foi possivel buscar as oficinas",Toast.LENGTH_LONG).show();
             progress.dismiss();
-        }else{
-            Toast.makeText(getContext(),"Oficinas encontradas",Toast.LENGTH_LONG).show();
-            progress.dismiss();
+
+        }else {
+            Toast.makeText(getContext(), "Oficinas encontradas", Toast.LENGTH_LONG).show();
+
+            for(Oficina oficina : listOficinasMap){
+
+                //So teste
+                // Toast.makeText(getContext(), "Oficina = "+oficina.getRua(), Toast.LENGTH_SHORT).show();
+
+                LatLng posicao = getLocationFromAddress(getContext(),
+                        oficina.getRua()+", "+oficina.getNumero()+", "+oficina.getBairro()+", "+"Natal - RN,"+oficina.getCep()+", "+"Brasil");
+
+
+                //add market
+                mMap.addMarker(new MarkerOptions().position(posicao).title(oficina.getNome()));
+
+
+
+
+
+            }
         }
 
-        for(Oficina oficina : listOficinasMap){
-
-            //So teste
-            // Toast.makeText(getContext(), "Oficina = "+oficina.getRua(), Toast.LENGTH_SHORT).show();
-
-            LatLng posicao = getLocationFromAddress(getContext(),
-                    oficina.getRua()+", "+oficina.getNumero()+", "+oficina.getBairro()+", "+"Natal - RN,"+oficina.getCep()+", "+"Brasil");
-            //Toast.makeText(getContext(), "Oficina = "+oficina.getRua()+"Posição = "+posicao, Toast.LENGTH_SHORT).show();
-
-            //add market
-            mMap.addMarker(new MarkerOptions().position(posicao).title(oficina.getNome()));
-
-
-        }
 
         if (currentLocationMaker != null) {
             currentLocationMaker.remove();
@@ -253,19 +256,26 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
         Log.i("LOG","Lat "+location.getLatitude());
         Log.i("LOG","Lang "+location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(currentLocationLatLong);
-        markerOptions.title("Localização atual");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
-        currentLocationMaker = mMap.addMarker(markerOptions);
+        if( currentLocationLatLong != null && mMap!=null && location!=null && !location.equals("")){
+            markerOptions.position(currentLocationLatLong);
+            markerOptions.title("Localização atual");
+            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+            currentLocationMaker = mMap.addMarker(markerOptions);
+            progress.dismiss();
+            
+            //Move to new location
+            CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(currentLocationLatLong).build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            Toast.makeText(getContext(), "Localização atualizada", Toast.LENGTH_SHORT).show();
 
-        //Move to new location
-        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(currentLocationLatLong).build();
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        }else{
+            Toast.makeText(getContext(), "Não foi possivel obter sua posição", Toast.LENGTH_SHORT).show();
+            progress.dismiss();
+        }
 
       /*  LocationData locationData = new LocationData(location.getLatitude(), location.getLongitude());
         mDatabase.child("location").child(String.valueOf(new Date().getTime())).setValue(locationData);
 */
-        Toast.makeText(getContext(), "Localização atualizada", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -296,6 +306,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
 
     }
 
