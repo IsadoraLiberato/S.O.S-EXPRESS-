@@ -14,4 +14,5 @@
     <string name="title_activity_login_activity">Login do usuário</string>
     <string name="title_activity_mapa_minha_posicao">Map</string>
     <string name="cpf">cpf</string>
+    <string name="telefone">Telefone</string>
 </resources>

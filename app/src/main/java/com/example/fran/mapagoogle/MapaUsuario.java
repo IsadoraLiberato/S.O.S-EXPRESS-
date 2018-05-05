@@ -69,10 +69,10 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
 
         this.callConnection();
-<<<<<<< HEAD
-=======
+
+
         this.startGettingLocations();
->>>>>>> upstream/master
+
         retornaOficinas();
         getMapAsync(this);
 
