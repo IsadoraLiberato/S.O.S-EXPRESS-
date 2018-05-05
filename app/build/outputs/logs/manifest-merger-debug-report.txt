@@ -1,0 +1,232 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\236c12e82243d14c8ecbc4ef1c300ba5\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\8640d11a91417ee351731854fa6a1c8b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\bfdfb97c746d966613dc671c4d1fe89e\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-location:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.0.aar\45935d946c1ab3bc6ed8c37230c00766\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\ab49cc5211a62778d0c56767ea4b0043\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\4c360468806acc47d931069f0231a34a\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1b85231f8af0b903cbb8dd94162a5562\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\0e5c12077cd500789de1012f0b43e418\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\75a3e60d214d5fd9b88009f25176bbcd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\f50c5aab84547b129b2bfe0cded8b9ad\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\cdac1579dbd126436c92301e3b0b4a88\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c922960b0f32cce13839fde58c56756f\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b6d195b66144cf5507e4cafd48c47123\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\d80d9c3e0c57e3e9babbd931dd295aa4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\44e0132194bb57afbc81107c8cfa7265\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\66633509365a0e86c1624f0cc6811bb0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\2b3575f6244815c1b64d0a5d009f4628\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\936416a365c8da761d96f7e5cdad8ef0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\156a5ab3be686c890e1afe3ca6b73fb1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a33e63a2220fa258f0b2d4df54729f31\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+	package
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:1-57:12
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:2:11-69
+permission#your.package.name.permission.MAPS_RECEIVE
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:10:5-111
+	android:protectionLevel
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:10:74-109
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:10:17-73
+uses-permission#your.package.name.permission.MAPS_RECEIVE
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:12:5-78
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:12:22-76
+uses-permission#com.google.android.providers.gsf.permission.READ_GSERVICES
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:13:5-97
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:13:22-95
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:14:22-76
+uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:15:5-86
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:15:29-83
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:16:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:16:22-64
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:17:5-81
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:17:22-78
+application
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:19:5-55:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\bfdfb97c746d966613dc671c4d1fe89e\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\bfdfb97c746d966613dc671c4d1fe89e\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:30:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.0.aar\45935d946c1ab3bc6ed8c37230c00766\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.0.aar\45935d946c1ab3bc6ed8c37230c00766\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\ab49cc5211a62778d0c56767ea4b0043\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\ab49cc5211a62778d0c56767ea4b0043\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\4c360468806acc47d931069f0231a34a\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\4c360468806acc47d931069f0231a34a\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:22:5-26:19
+	android:supportsRtl
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:24:9-35
+	android:label
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:22:9-41
+	android:roundIcon
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:23:9-54
+	android:icon
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:21:9-43
+	android:allowBackup
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:20:9-35
+	android:theme
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:25:9-40
+activity#com.example.fran.mapagoogle.ActPrincipal
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:26:9-31:20
+	android:label
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:28:13-45
+	android:theme
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:29:13-44
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:27:13-41
+activity#com.example.fran.mapagoogle.Login
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:33:9-39:20
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:33:19-40
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:34:13-38:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:35:17-69
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:35:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:37:17-77
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:37:27-74
+activity#com.example.fran.mapagoogle.CadastroOficina
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:40:9-53
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:40:19-50
+activity#com.example.fran.mapagoogle.CdsOficina
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:41:9-48
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:41:19-45
+activity#com.example.fran.mapagoogle.CdsUsuario
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:42:9-48
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:42:19-45
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:51:9-53:71
+	android:value
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:53:13-68
+	android:name
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml:52:13-58
+uses-sdk
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\236c12e82243d14c8ecbc4ef1c300ba5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\236c12e82243d14c8ecbc4ef1c300ba5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\8640d11a91417ee351731854fa6a1c8b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\8640d11a91417ee351731854fa6a1c8b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\bfdfb97c746d966613dc671c4d1fe89e\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\bfdfb97c746d966613dc671c4d1fe89e\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.0.aar\45935d946c1ab3bc6ed8c37230c00766\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.0.aar\45935d946c1ab3bc6ed8c37230c00766\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\ab49cc5211a62778d0c56767ea4b0043\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-places-placereport-15.0.1.aar\ab49cc5211a62778d0c56767ea4b0043\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\4c360468806acc47d931069f0231a34a\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\4c360468806acc47d931069f0231a34a\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1b85231f8af0b903cbb8dd94162a5562\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1b85231f8af0b903cbb8dd94162a5562\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\0e5c12077cd500789de1012f0b43e418\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\0e5c12077cd500789de1012f0b43e418\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\75a3e60d214d5fd9b88009f25176bbcd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\75a3e60d214d5fd9b88009f25176bbcd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\f50c5aab84547b129b2bfe0cded8b9ad\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\f50c5aab84547b129b2bfe0cded8b9ad\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\cdac1579dbd126436c92301e3b0b4a88\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\cdac1579dbd126436c92301e3b0b4a88\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c922960b0f32cce13839fde58c56756f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\c922960b0f32cce13839fde58c56756f\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b6d195b66144cf5507e4cafd48c47123\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\b6d195b66144cf5507e4cafd48c47123\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\d80d9c3e0c57e3e9babbd931dd295aa4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\d80d9c3e0c57e3e9babbd931dd295aa4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\44e0132194bb57afbc81107c8cfa7265\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\44e0132194bb57afbc81107c8cfa7265\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\66633509365a0e86c1624f0cc6811bb0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\66633509365a0e86c1624f0cc6811bb0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\2b3575f6244815c1b64d0a5d009f4628\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\2b3575f6244815c1b64d0a5d009f4628\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\936416a365c8da761d96f7e5cdad8ef0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\936416a365c8da761d96f7e5cdad8ef0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\156a5ab3be686c890e1afe3ca6b73fb1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\156a5ab3be686c890e1afe3ca6b73fb1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a33e63a2220fa258f0b2d4df54729f31\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a33e63a2220fa258f0b2d4df54729f31\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\fran_oliver\Desktop\S.O.S-EXPRESS-Alternativo\app\src\main\AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:15.0.0] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-maps-15.0.0.aar\351a0b3072989efcd118cd57160ad22c\AndroidManifest.xml:28:9-32
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-base-15.0.1.aar\cd29db0d7c81e9621b807f3686f06cf2\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\fran_oliver\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\4991f441546e8dc28883d4d3cbd07ea6\AndroidManifest.xml:24:13-58

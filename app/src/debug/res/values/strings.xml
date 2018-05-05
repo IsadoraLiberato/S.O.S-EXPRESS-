@@ -18,6 +18,7 @@
     <string name="bairro1">Bairro</string>
     <string name="n_mero1">Número</string>
     <string name="rua1">Rua</string>
+    <string name="tel">Telefone</string>
     <string name="cep1">CEP</string>
     <string name="alpha_0_1">Alpha 0.1</string>
     <string name="cadastro_para_oficinas">Cadastro para Oficinas</string>

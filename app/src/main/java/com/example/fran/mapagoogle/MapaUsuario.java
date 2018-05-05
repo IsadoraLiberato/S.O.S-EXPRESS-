@@ -1,6 +1,5 @@
 package com.example.fran.mapagoogle;
 
-import android.Manifest;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -29,7 +28,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -38,17 +36,14 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback,LocationListener {
-
     private GoogleMap mMap;
     private ProgressDialog progress;
     private GoogleApiClient googleApiClient;
@@ -56,6 +51,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
     private Marker currentLocationMaker;
     private Marker locationOficinasMaker;
     private LatLng currentLocationLatLong;
+    private List<Oficina> listOficinasMap;
 
 
     @Override
@@ -64,29 +60,28 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
 
         listaOficinas = new ArrayList<>();
-
-
+        listOficinasMap = retornaOficinas();
 
 
         this.callConnection();
-<<<<<<< HEAD
-=======
         this.startGettingLocations();
->>>>>>> upstream/master
-        retornaOficinas();
+
         getMapAsync(this);
 
         //Chamando o progress
         progress = new ProgressDialog(getContext());
-        progress.setTitle("Aguarde..... ");
+        progress.setTitle("Aguarde carregando mapa... ");
         progress.show();
-
 
     }
 
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
+
+
     }
 
     private synchronized void callConnection() {
@@ -108,17 +103,14 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
     }
 
 
-    public LatLng getLocationFromAddress(Context context, String strAddress)
-    {
-        Geocoder coder= new Geocoder(context);
+    public LatLng getLocationFromAddress(Context context, String strAddress) {
+        Geocoder coder = new Geocoder(context);
         List<Address> address;
         LatLng p1 = null;
 
-        try
-        {
+        try {
             address = coder.getFromLocationName(strAddress, 5);
-            if(address==null)
-            {
+            if (address == null) {
                 return null;
             }
             Address location = address.get(0);
@@ -126,12 +118,17 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             location.getLongitude();
 
             p1 = new LatLng(location.getLatitude(), location.getLongitude());
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return p1;
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //getActivity().getFragmentManager().popBackStack();
 
     }
 
@@ -145,14 +142,10 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             @Override
             public void onResponse(Call<List<Oficina>> call, Response<List<Oficina>> response) {
 
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
                     listaOficinas = response.body();
-                    Toast.makeText(getContext(),"Chamada das oficinas OK",Toast.LENGTH_SHORT).show();
-                    //AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-                   // alert.setTitle("Dados");
-                   // alert.setMessage("Nome oficina: "+listaOficinas.get(8).getNome()
-                   //    +"\n Rua: "+listaOficinas.get(8).getRua());
-                    //alert.show();
+                    Toast.makeText(getContext(), "Chamada das oficinas OK", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
@@ -162,60 +155,74 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             }
         });
 
-        return  listaOficinas;
+        return listaOficinas;
 
     }
 
     @Override
     public void onLocationChanged(Location location) {
+
         //pegar todas as oficinas
-        List<Oficina> listOficinasMap = retornaOficinas();
+        listOficinasMap = retornaOficinas();
 
         //Verifica se a lista estar vazia(So para testar)
-        if(listOficinasMap.isEmpty()){
-            Toast.makeText(getContext(),"Não foi possivel buscar as oficinas",Toast.LENGTH_LONG).show();
+        if (listOficinasMap.isEmpty()) {
+            Toast.makeText(getContext(), "Não foi possivel buscar as oficinas", Toast.LENGTH_LONG).show();
             progress.dismiss();
-        }else{
-            Toast.makeText(getContext(),"Oficinas encontradas",Toast.LENGTH_LONG).show();
-            progress.dismiss();
+
+        } else {
+            Toast.makeText(getContext(), "Oficinas encontradas", Toast.LENGTH_LONG).show();
+
+            for (Oficina oficina : listOficinasMap) {
+
+                //So teste
+                // Toast.makeText(getContext(), "Oficina = "+oficina.getRua(), Toast.LENGTH_SHORT).show();
+
+                LatLng posicao = getLocationFromAddress(getContext(),
+                        oficina.getRua() + ", " + oficina.getNumero() + ", " + oficina.getBairro() + ", " + "Natal - RN," + oficina.getCep() + ", " + "Brasil");
+
+
+                //add market
+                mMap.addMarker(new MarkerOptions()
+                        .position(posicao)
+                        .title(oficina.getNome())
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_ofic)));
+
+
+            }
         }
 
-        for(Oficina oficina : listOficinasMap){
-
-            //So teste
-            // Toast.makeText(getContext(), "Oficina = "+oficina.getRua(), Toast.LENGTH_SHORT).show();
-
-            LatLng posicao = getLocationFromAddress(getContext(),
-                    oficina.getRua()+", "+oficina.getNumero()+", "+oficina.getBairro()+", "+"Natal - RN,"+oficina.getCep()+", "+"Brasil");
-            //Toast.makeText(getContext(), "Oficina = "+oficina.getRua()+"Posição = "+posicao, Toast.LENGTH_SHORT).show();
-
-            //add market
-            mMap.addMarker(new MarkerOptions().position(posicao).title(oficina.getNome()));
-
-
-        }
 
         if (currentLocationMaker != null) {
             currentLocationMaker.remove();
         }
         //Add marker
         currentLocationLatLong = new LatLng(location.getLatitude(), location.getLongitude());
-        Log.i("LOG","Lat "+location.getLatitude());
-        Log.i("LOG","Lang "+location.getLongitude());
+        Log.i("LOG", "Lat " + location.getLatitude());
+        Log.i("LOG", "Lang " + location.getLongitude());
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(currentLocationLatLong);
-        markerOptions.title("Localização atual");
-        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
-        currentLocationMaker = mMap.addMarker(markerOptions);
+        if (currentLocationLatLong != null && mMap != null && location != null && !location.equals("")) {
+            markerOptions.position(currentLocationLatLong);
+            markerOptions.title("Localização atual");
+            markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_userlocation));
 
-        //Move to new location
-        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(currentLocationLatLong).build();
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            currentLocationMaker = mMap.addMarker(markerOptions);
+            progress.dismiss();
+
+            //Move to new location
+            CameraPosition cameraPosition = new CameraPosition.Builder().zoom(17).target(currentLocationLatLong).build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            Toast.makeText(getContext(), "Localização atualizada", Toast.LENGTH_SHORT).show();
+
+
+        }else{
+            Toast.makeText(getContext(), "Não foi possivel obter sua posição", Toast.LENGTH_SHORT).show();
+            progress.dismiss();
+        }
 
       /*  LocationData locationData = new LocationData(location.getLatitude(), location.getLongitude());
         mDatabase.child("location").child(String.valueOf(new Date().getTime())).setValue(locationData);
 */
-        Toast.makeText(getContext(), "Localização atualizada", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -226,7 +233,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
     @Override
     public void onProviderEnabled(String s) {
-
+        Toast.makeText(getContext(), "GPS ligado", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -236,7 +243,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-
+        Toast.makeText(getContext(), "Conectado", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -247,8 +254,8 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
-    }
 
+    }
 
     //Code para permissão
 
@@ -364,8 +371,5 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             Toast.makeText(getContext(), "Não é possível obter a localização", Toast.LENGTH_SHORT).show();
         }
     }
-
-
-
 
 }

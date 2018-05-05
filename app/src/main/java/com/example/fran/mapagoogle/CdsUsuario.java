@@ -64,7 +64,7 @@ public class CdsUsuario extends AppCompatActivity {
         user.setEmail(email);
         user.setTelefone(telefone);
         user.setSenha(senha);
-        user.setConfirmSen(confS);
+
 
         cadastraCliente(user.getNome(),user.getEmail(),user.getTelefone(),user.getCpf(),user.getSenha());
 
