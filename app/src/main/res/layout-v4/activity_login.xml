@@ -5,18 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-<<<<<<< HEAD:app/src/main/res/layout/activity_login_oficina.xml
-    tools:context="com.example.fran.mapagoogle.Login_Oficina">
-=======
-    tools:context="com.example.fran.mapagoogle.Login">
+    tools:context="estacio.isadora.sosexpress.Login">
 
 
 
     <EditText
         android:id="@+id/edtsenha"
         android:layout_width="346dp"
-        android:layout_height="wrap_content" />
->>>>>>> 0faeb835b45cc783ec7cdf5ec3f64ae6f9b6fa2a:app/src/main/res/layout/activity_login.xml
+        android:inputType="" />
 
     <EditText
         android:id="@+id/edt_email_login"
@@ -43,6 +39,7 @@
     <EditText
         android:id="@+id/edt_senha_login"
         android:layout_width="350dp"
+        android:inputType="">>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -59,10 +56,13 @@
         app:layout_constraintVertical_bias="0.793"
         tools:ignore="LabelFor" />
 
-    <Button android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+    <Button android:layout_height=""
+        android:layout_width="" />
 
-        <Button android:id="@+id/btacessar"
+        android:id="@+id/btacessar" 
+
+        android:id="@+id/btn_acessar"
+ a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
         android:layout_width="154dp"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
@@ -136,19 +136,19 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="365dp"
+        android:layout_width="363dp"
         android:layout_height="241dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.031"
-        app:srcCompat="@drawable/sos" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/sos"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView12"

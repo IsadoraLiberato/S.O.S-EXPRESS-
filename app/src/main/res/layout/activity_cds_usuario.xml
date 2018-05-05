@@ -70,6 +70,19 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+<<<<<<< HEAD
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.263"
+=======
         android:layout_marginBottom="8dp"
         android:text="Cpf"
         android:textColor="@android:color/background_dark"
@@ -94,18 +107,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274"
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+=======
         app:layout_constraintTop_toBottomOf="@+id/edt_nome_usu"
+>>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
         tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Email"
+=======
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/email"
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
         android:textColor="@android:color/background_dark"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -113,7 +140,15 @@
         app:layout_constraintHorizontal_bias="0.024"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        app:layout_constraintVertical_bias="0.334" />
+=======
+        app:layout_constraintVertical_bias="0.361" />
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+=======
         app:layout_constraintVertical_bias="0.325" />
+>>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
 
     <EditText
         android:id="@+id/edt_email_usu"
@@ -128,7 +163,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintVertical_bias="0.334"
+=======
+        app:layout_constraintVertical_bias="0.361"
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+=======
         app:layout_constraintTop_toBottomOf="@+id/edt_cpf_usu"
+>>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
         tools:ignore="LabelFor" />
 
     <TextView
@@ -147,7 +191,15 @@
         app:layout_constraintHorizontal_bias="0.025"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        app:layout_constraintVertical_bias="0.406" />
+=======
+        app:layout_constraintVertical_bias="0.453" />
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+=======
         app:layout_constraintVertical_bias="0.47" />
+>>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
 
     <EditText
         android:id="@+id/edt_senha_usu"
@@ -163,8 +215,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintVertical_bias="0.406"
+=======
+        app:layout_constraintVertical_bias="0.453"
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+=======
         app:layout_constraintTop_toBottomOf="@+id/edt_telefone_usu"
         app:layout_constraintVertical_bias="0.011"
+>>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
         tools:ignore="LabelFor" />
 
     <TextView
@@ -183,7 +244,15 @@
         app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        app:layout_constraintVertical_bias="0.474" />
+=======
+        app:layout_constraintVertical_bias="0.538" />
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+=======
         app:layout_constraintVertical_bias="0.555" />
+>>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
 
     <EditText
         android:id="@+id/edt_confirmS_usu"
@@ -198,10 +267,24 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
+<<<<<<< HEAD
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.474"
+=======
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.538"
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+=======
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_senha_usu"
         app:layout_constraintVertical_bias="0.032"
+>>>>>>> 36e1da76846ef3ba839a9499f779351278e49d47
         tools:ignore="LabelFor" />
 
     <Button
@@ -213,7 +296,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/confcds"
-        android:onClick="cadastraUser"
+        android:onClick="cadastrarUser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

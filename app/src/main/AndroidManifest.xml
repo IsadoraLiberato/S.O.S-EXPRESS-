@@ -30,18 +30,38 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ActPrincipal"
+            android:screenOrientation="portrait"
             android:label="@string/app_name"
+<<<<<<< HEAD
             android:theme="@style/AppTheme" />
         <activity   android:name=".SplashScreenSOS"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+=======
+            android:theme="@style/AppTheme">
+
+        </activity>
+
+        <activity android:name=".Login"
+            android:screenOrientation="portrait">
+
+>>>>>>> 0faeb835b45cc783ec7cdf5ec3f64ae6f9b6fa2a
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".Login_Oficina" />
         <activity android:name=".CdsOficina" />
         <activity android:name=".CdsUsuario" />
+=======
+        <activity android:name=".CadastroOficina"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CdsOficina"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CdsUsuario"
+            android:screenOrientation="portrait"/>
+>>>>>>> 0faeb835b45cc783ec7cdf5ec3f64ae6f9b6fa2a
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

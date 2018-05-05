@@ -1,5 +1,43 @@
 <resources>
-    <string name="app_name">MapaGoogle</string>
+    <string name="app_name">SOSEXPRESS</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="acessar">Acessar</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="todo">TODO</string>
+    <string name="usu_rio">Usuário</string>
+    <string name="Senha">Senha</string>
+    <string name="Email">Email</string>
+    <string name="confirmar_senha1">Confirmar Senha</string>
+    <string name="senha1">Senha</string>
+    <string name="email2">Email</string>
+    <string name="cnpj">CNPJ</string>
+    <string name="telefone">Telefone</string>
+    <string name="nome_fantasia">Nome Fantasia</string>
+    <string name="cadastre_sua_oficina">Cadastre sua oficina</string>
+    <string name="bairro1">Bairro</string>
+    <string name="n_mero1">Número</string>
+    <string name="rua1">Rua</string>
+    <string name="cep1">CEP</string>
+    <string name="alpha_0_1">Alpha 0.1</string>
+    <string name="cadastro_para_oficinas">Cadastro para Oficinas</string>
+    <string name="cadastro_para_usu_rios">Cadastro para Usuários</string>
+    <string name="nome">Nome</string>
+    <string name="data_de_nascimento">Data de Nascimento</string>
+    <string name="cpf">CPF</string>
+    <string name="rua">Rua</string>
+    <string name="n_mero">Número</string>
+    <string name="cep">CEP</string>
+    <string name="bairro">Bairro</string>
+    <string name="email1">Email</string>
+    <string name="senha2">Senha</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="title_activity_mapa_usuario">Map</string>
+    <string name="t_tulo">Título</string>
+    <string name="descri_o_aqui">Descrição aqui...</string>
+    <string name="todo1">TODO</string>
+=======
+    <string name="app_name1">MapaGoogle</string>
     <string name="title_cad_opcao">Tipo de cadastro</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -13,6 +51,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login_activity">Login do usuário</string>
     <string name="title_activity_mapa_minha_posicao">Map</string>
+<<<<<<< HEAD
     <string name="cpf">cpf</string>
     <string name="telefone">Telefone</string>
+=======
+    <string name="cpf1">cpf</string>
+>>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
+>>>>>>> 0faeb835b45cc783ec7cdf5ec3f64ae6f9b6fa2a
 </resources>

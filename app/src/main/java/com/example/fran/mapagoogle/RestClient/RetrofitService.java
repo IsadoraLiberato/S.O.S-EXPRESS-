@@ -30,11 +30,13 @@ public interface RetrofitService {
                                    @Field("cnpj") String cnpj,
                                    @Field("telefone") String telefone,
                                    @Field("email") String email,
+    
                                    @Field("senha") String senha);
+  //retornar oficinas
     @GET("oficina")
     Call<List<Oficina>> getOficinas();
 
-    @FormUrlEncoded
+  //cadastrar clientes
     @POST("clientes")
     Call<Usuario> cadastrarCliente(@Field("nome") String nome,
                                    @Field("email") String email,
@@ -42,7 +44,9 @@ public interface RetrofitService {
                                    @Field("cpf") String cpf,
                                    @Field("senha") String senha);
 
+//buscar clientes por email
     @GET("cliente/{email}")
     Call<Usuario> getCliente(@Path("email") String email);
+
 
 }
