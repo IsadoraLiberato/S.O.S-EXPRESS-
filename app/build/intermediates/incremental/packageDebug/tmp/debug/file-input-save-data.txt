@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Fri May 04 21:09:46 GFT 2018
+#Fri May 04 23:50:54 GFT 2018
 0.baseType=DIRECTORY
-0.base=C\:\\Users\\fran_oliver\\Desktop\\S.O.S-EXPRESS-Alternativo\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+0.base=C\:\\www\\S.O.S-EXPRESS-\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 0.path=classes.dex
 0.set=DEX
 count=1

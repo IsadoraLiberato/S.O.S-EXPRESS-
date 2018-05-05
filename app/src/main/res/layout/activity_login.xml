@@ -5,14 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context="estacio.isadora.sosexpress.Login">
-
-
-
-    <EditText
-        android:id="@+id/edtsenha"
-        android:layout_width="346dp"
-        android:layout_height="wrap_content" />
+    tools:context=".Login">
 
     <EditText
         android:id="@+id/edt_email_login"
@@ -55,10 +48,8 @@
         app:layout_constraintVertical_bias="0.793"
         tools:ignore="LabelFor" />
 
-    <Button android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-
-        <Button android:id="@+id/btacessar"
+    <Button
+        android:id="@+id/btn_acessar"
         android:layout_width="154dp"
         android:layout_height="44dp"
         android:layout_marginStart="8dp"
@@ -89,8 +80,7 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946"
-        tools:ignore="OnClick" />
+        app:layout_constraintVertical_bias="0.946" />
 
     <TextView
         android:id="@+id/textView"
@@ -135,7 +125,6 @@
         android:layout_width="363dp"
         android:layout_height="241dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,28 +146,5 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
         tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/edtemail"
-        android:layout_width="341dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:color/background_light"
-        android:contextClickable="true"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textColor="@android:color/background_dark"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62"
-        tools:ignore="LabelFor"
-        tools:targetApi="m" />
 
 </android.support.constraint.ConstraintLayout>

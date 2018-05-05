@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\fran_oliver\\Desktop\\S.O.S-EXPRESS-Alternativo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\www\\S.O.S-EXPRESS-\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
                     "source": "C:\\Users\\fran_oliver\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\66633509365a0e86c1624f0cc6811bb0\\res\\values-v16\\values-v16.xml",

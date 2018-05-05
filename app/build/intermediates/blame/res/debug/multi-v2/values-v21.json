@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\fran_oliver\\Desktop\\S.O.S-EXPRESS-Alternativo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "C:\\www\\S.O.S-EXPRESS-\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\fran_oliver\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\66633509365a0e86c1624f0cc6811bb0\\res\\values-v21\\values-v21.xml",
@@ -61,6 +61,25 @@
                     }
                 },
                 {
+                    "source": "C:\\www\\S.O.S-EXPRESS-\\app\\src\\main\\res\\values-v21\\styles.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "17",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "240"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "354",
+                        "endLines": "10",
+                        "endColumns": "12",
+                        "endOffsets": "577"
+                    }
+                },
+                {
                     "source": "C:\\Users\\fran_oliver\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\44e0132194bb57afbc81107c8cfa7265\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,5,8,11",
@@ -77,25 +96,6 @@
                         "endLines": "276,279,283,287",
                         "endColumns": "12,12,12,12",
                         "endOffsets": "20203,20366,20660,20955"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\fran_oliver\\Desktop\\S.O.S-EXPRESS-Alternativo\\app\\src\\main\\res\\values-v21\\styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "17",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "240"
-                    },
-                    "to": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "354",
-                        "endLines": "10",
-                        "endColumns": "12",
-                        "endOffsets": "577"
                     }
                 }
             ]

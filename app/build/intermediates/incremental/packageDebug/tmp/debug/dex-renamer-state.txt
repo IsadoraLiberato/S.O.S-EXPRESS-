@@ -1,4 +1,4 @@
-#Fri May 04 21:09:46 GFT 2018
-base.0=C\:\\Users\\fran_oliver\\Desktop\\S.O.S-EXPRESS-Alternativo\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Fri May 04 23:50:53 GFT 2018
+base.0=C\:\\www\\S.O.S-EXPRESS-\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

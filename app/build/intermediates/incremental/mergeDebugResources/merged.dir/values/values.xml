@@ -847,6 +847,7 @@
     <item name="action_bar_spinner" type="id"/>
     <item name="action_menu_divider" type="id"/>
     <item name="action_menu_presenter" type="id"/>
+    <item name="action_personalized_infowindow" type="id"/>
     <item name="ghost_view" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
@@ -918,6 +919,7 @@
     <string name="action_exit">Sair</string>
     <string name="alpha_0_1">Alpha 0.1</string>
     <string name="app_name">SOSEXPRESS</string>
+    <string name="app_name1">MapaGoogle</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bairro">Bairro</string>
     <string name="bairro1">Bairro</string>
@@ -951,7 +953,9 @@
     <string name="confirmar_senha">Confirmar Senha</string>
     <string name="confirmar_senha1">Confirmar Senha</string>
     <string name="cpf" translatable="false">CPF</string>
+    <string name="cpf1">cpf</string>
     <string name="data_de_nascimento">Data de Nascimento</string>
+    <string name="descri_o_aqui">Descrição aqui...</string>
     <string name="email">Email</string>
     <string name="email1">Email</string>
     <string name="email2">Email</string>
@@ -978,6 +982,7 @@
     <string name="senha1">Senha</string>
     <string name="senha2">Senha</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="t_tulo">Título</string>
     <string name="tel">Telefone</string>
     <string name="telefone">Telefone</string>
     <string name="title_activity_login_activity">Login do usuário</string>
@@ -986,6 +991,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_cad_opcao">Tipo de cadastro</string>
     <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
     <string name="usu_rio">Usuário</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

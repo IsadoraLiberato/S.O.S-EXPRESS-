@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\fran_oliver\\Desktop\\S.O.S-EXPRESS-Alternativo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
+            "outputFile": "C:\\www\\S.O.S-EXPRESS-\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-pt-rBR\\values-pt-rBR.xml",
             "map": [
                 {
                     "source": "C:\\Users\\fran_oliver\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\cd29db0d7c81e9621b807f3686f06cf2\\res\\values-pt-rBR\\values.xml",
