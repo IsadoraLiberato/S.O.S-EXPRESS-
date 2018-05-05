@@ -30,38 +30,20 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ActPrincipal"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
-<<<<<<< HEAD
             android:theme="@style/AppTheme" />
-        <activity   android:name=".SplashScreenSOS"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-=======
-            android:theme="@style/AppTheme">
-
-        </activity>
-
-        <activity android:name=".Login"
+        <activity android:name=".OpcaodeLogin"
             android:screenOrientation="portrait">
-
->>>>>>> 0faeb835b45cc783ec7cdf5ec3f64ae6f9b6fa2a
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".Login_Oficina" />
-        <activity android:name=".CdsOficina" />
-        <activity android:name=".CdsUsuario" />
-=======
-        <activity android:name=".CadastroOficina"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginOficina"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".CdsOficina"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".CdsUsuario"
-            android:screenOrientation="portrait"/>
->>>>>>> 0faeb835b45cc783ec7cdf5ec3f64ae6f9b6fa2a
+            android:screenOrientation="portrait">
+        </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -70,14 +52,22 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/. 
         -->
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBuJMVraGZi8OQILHFXP6GJfi8xwmfihHs" />
 
-        <activity android:name=".Login_Cliente" />
+        <activity android:name=".LoginCliente"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
-            android:name=".CadastroOficina"/>
+            android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

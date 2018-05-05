@@ -15,7 +15,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitServiceGenerator {
     //URL base do endpoint. Deve sempre terminar com /
-    public static final String API_BASE_URL ="http://jhsdev.com/index.php/api/";
+    //public static final String API_BASE_URL ="http://jhsdev.com/index.php/api/";
+    public static final String API_BASE_URL ="http://192.168.15.3:80/api/";
     public static <S> S createService( Class<S> serviceClass) {
 
         //Instancia do interceptador das requisições

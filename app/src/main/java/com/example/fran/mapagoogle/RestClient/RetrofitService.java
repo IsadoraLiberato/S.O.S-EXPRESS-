@@ -1,5 +1,6 @@
 package com.example.fran.mapagoogle.RestClient;
 
+import com.example.fran.mapagoogle.entidade.MensagemLogin;
 import com.example.fran.mapagoogle.entidade.Oficina;
 import com.example.fran.mapagoogle.entidade.Usuario;
 
@@ -11,6 +12,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by handerson on 23/04/18.
@@ -30,13 +32,11 @@ public interface RetrofitService {
                                    @Field("cnpj") String cnpj,
                                    @Field("telefone") String telefone,
                                    @Field("email") String email,
-    
                                    @Field("senha") String senha);
-  //retornar oficinas
     @GET("oficina")
     Call<List<Oficina>> getOficinas();
 
-  //cadastrar clientes
+    @FormUrlEncoded
     @POST("clientes")
     Call<Usuario> cadastrarCliente(@Field("nome") String nome,
                                    @Field("email") String email,
@@ -44,9 +44,7 @@ public interface RetrofitService {
                                    @Field("cpf") String cpf,
                                    @Field("senha") String senha);
 
-//buscar clientes por email
-    @GET("cliente/{email}")
-    Call<Usuario> getCliente(@Path("email") String email);
-
+    @GET("clientes/{email}")
+    Call<MensagemLogin> getCliente(@Path("email") String email);
 
 }

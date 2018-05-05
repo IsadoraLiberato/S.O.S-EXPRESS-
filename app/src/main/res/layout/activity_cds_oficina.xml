@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context="com.example.fran.mapagoogle.CdsOficina">
+    tools:context="estacio.isadora.sosexpress.CdsOficina">
 
     <TextView
         android:id="@+id/textView6"

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SOSEXPRESS2.iml" filepath="$PROJECT_DIR$/SOSEXPRESS2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/S.O.S-EXPRESS-.iml" filepath="$PROJECT_DIR$/S.O.S-EXPRESS-.iml" />
+      <module fileurl="file://C:\Users\isado\AndroidStudioProjects\S.O.S-EXPRESS-\SOSEXPRESS2.iml" filepath="C:\Users\isado\AndroidStudioProjects\S.O.S-EXPRESS-\SOSEXPRESS2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

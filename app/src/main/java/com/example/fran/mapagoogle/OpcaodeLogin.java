@@ -1,22 +1,20 @@
 package com.example.fran.mapagoogle;
 
 import android.content.Intent;
-import android.graphics.Path;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class OpçãodeLogin extends AppCompatActivity {
+public class OpcaodeLogin extends AppCompatActivity {
 
-    private Button btn_ficina;
-    private Button btn_usu;
+    Button btn_ficina;
+    Button btn_usu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opcao_de_login);
-
 
         btn_ficina =  findViewById(R.id.btn_oficina);
         btn_usu = findViewById(R.id.btn_usuario);
@@ -37,12 +35,12 @@ public class OpçãodeLogin extends AppCompatActivity {
     }
 
     private void telaloginusuario() {
-        Intent intent = new Intent(OpçãodeLogin.this, LoginCliente.class);
+        Intent intent = new Intent(OpcaodeLogin.this, LoginCliente.class);
         startActivity(intent);
     }
 
     private void telaloginoficina() {
-        Intent intent = new Intent(OpçãodeLogin.this, LoginOficina.class);
+        Intent intent = new Intent(OpcaodeLogin.this, LoginOficina.class);
         startActivity(intent);
     }
 

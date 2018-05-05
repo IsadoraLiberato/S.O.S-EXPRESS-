@@ -1,13 +1,13 @@
 package com.example.fran.mapagoogle.entidade;
 
 public class Usuario {
+
     private int id;
     private String nome;
     private String cpf;
     private String email;
     private String telefone;
     private String senha;
-    private String confirmSen;
     private String created_at;
     private String updated_at;
 
@@ -59,13 +59,6 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getConfirmSen() {
-        return confirmSen;
-    }
-
-    public void setConfirmSen(String confirmSen) {
-        this.confirmSen = confirmSen;
-    }
 
     public String getCreated_at() {
         return created_at;

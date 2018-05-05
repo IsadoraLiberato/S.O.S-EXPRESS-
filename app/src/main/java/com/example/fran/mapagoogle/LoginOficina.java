@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Login extends AppCompatActivity {
+public class LoginOficina extends AppCompatActivity {
 
     private EditText edt_email;
     private EditText edt_senha;
@@ -35,7 +35,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_oficina);
 
         edt_email =  findViewById(R.id.edt_email_login);
         edt_senha =  findViewById(R.id.edt_senha_login);
@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity {
     public void fazerLogin(View view)
     {
         //Chamando o progress
-        progress = new ProgressDialog(Login.this);
+        progress = new ProgressDialog(LoginOficina.this);
         progress.setTitle("Verificando dados..... ");
         progress.show();
 
@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
        if( existeCliente && valida){
             telamapa();
         }else{
-            AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+            AlertDialog.Builder alert = new AlertDialog.Builder(LoginOficina.this);
             alert.setTitle("Erro");
             alert.setMessage("Os dados digitados não correspondem a nenhum cliente cadastrado\n" +
                     " ou faltam campos a serem preenchidos");
@@ -88,13 +88,13 @@ public class Login extends AppCompatActivity {
     }
 
     private void telaEscolhaCadastro(){
-        Intent intent = new Intent(Login.this, CadastroOficina.class);
+        Intent intent = new Intent(LoginOficina.this, CdsOficina.class);
         startActivity(intent);
         finish();
     }
 
     private void telamapa (){
-        Intent intent = new Intent(Login.this, ActPrincipal.class);
+        Intent intent = new Intent(LoginOficina.this, ActPrincipal.class);
         startActivity(intent);
         finish();
      }
@@ -132,7 +132,7 @@ public class Login extends AppCompatActivity {
                         if (msgL.getMsg().equals("true") && msgL.getEmail().equals(email) && msgL.getSenha().equals(senha)){
                             resultado = true;
                             progress.dismiss();
-                            Toast.makeText(Login.this, "Dados conferem", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginOficina.this, "Dados conferem", Toast.LENGTH_SHORT).show();
 
                         }else{
                             resultado = false;
