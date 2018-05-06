@@ -32,6 +32,8 @@ public class Login extends AppCompatActivity {
     Preferences preferences;
     ProgressDialog progress;
 
+    private int id_user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +97,7 @@ public class Login extends AppCompatActivity {
 
     private void telamapa (){
         Intent intent = new Intent(Login.this, ActPrincipal.class);
+        intent.putExtra("id",id_user);
         startActivity(intent);
         finish();
      }
@@ -131,6 +134,7 @@ public class Login extends AppCompatActivity {
 
                         if (msgL.getMsg().equals("true") && msgL.getEmail().equals(email) && msgL.getSenha().equals(senha)){
                             resultado = true;
+                            id_user = msgL.getId();
                             progress.dismiss();
                             Toast.makeText(Login.this, "Dados conferem", Toast.LENGTH_SHORT).show();
 

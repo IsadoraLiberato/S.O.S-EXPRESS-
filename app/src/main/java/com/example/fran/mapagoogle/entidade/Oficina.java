@@ -3,7 +3,7 @@ package com.example.fran.mapagoogle.entidade;
 public class Oficina {
     private  int id;
     private String rua;
-    private int numero;
+    private String numero;
     private String bairro;
     private String cep;
     private String nome;
@@ -49,11 +49,11 @@ public class Oficina {
         this.rua = rua;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
