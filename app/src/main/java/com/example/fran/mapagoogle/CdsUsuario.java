@@ -12,11 +12,8 @@ import android.widget.Toast;
 
 import com.example.fran.mapagoogle.GeneratoRetrofit.RetrofitServiceGenerator;
 import com.example.fran.mapagoogle.RestClient.RetrofitService;
-import com.example.fran.mapagoogle.entidade.Oficina;
 import com.example.fran.mapagoogle.entidade.Usuario;
 import com.example.fran.mapagoogle.util.Preferences;
-
-import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -74,7 +71,7 @@ public class CdsUsuario extends AppCompatActivity {
 
         Toast.makeText(this, "Email: "+preferences.getEmailCliente()+" Senha: "+preferences.getSenhaCliente(),Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(CdsUsuario.this, Login.class);
+        Intent intent = new Intent(CdsUsuario.this, LoginCliente.class);
         startActivity(intent);
 
         //Chamando o progress

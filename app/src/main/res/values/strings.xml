@@ -4,6 +4,8 @@
     <string name="senha">Senha</string>
     <string name="acessar">Acessar</string>
     <string name="cadastre_se">Cadastre-se</string>
+    <string name="acesso_cadastro">Cadastrar</string>
+    <string name="acesso_login">Logar</string>
     <string name="todo">TODO</string>
     <string name="usu_rio">Usuário</string>
     <string name="Senha">Senha</string>
@@ -36,7 +38,6 @@
     <string name="t_tulo">Título</string>
     <string name="descri_o_aqui">Descrição aqui...</string>
     <string name="todo1">TODO</string>
-=======
     <string name="app_name1">MapaGoogle</string>
     <string name="title_cad_opcao">Tipo de cadastro</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -46,11 +47,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_exit">Sair</string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="sos">sos</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login_activity">Login do usuário</string>
     <string name="title_activity_mapa_minha_posicao">Map</string>
     <string name="cpf1">cpf</string>
->>>>>>> a7ee041f64b2a029057f0aa6d3ab6a4b5bd3af42
 </resources>

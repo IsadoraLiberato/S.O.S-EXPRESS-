@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class CadastroOficina extends AppCompatActivity {
+public class OpcaoCadastro extends AppCompatActivity {
 
     private Button btn_ficina;
     private Button btn_usu;
@@ -14,7 +14,7 @@ public class CadastroOficina extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_oficina);
+        setContentView(R.layout.opcao_cadastro);
 
 
         btn_ficina =  findViewById(R.id.btn_oficina);
@@ -22,12 +22,12 @@ public class CadastroOficina extends AppCompatActivity {
     }
 
     public void telaCadOficina(View view){
-        Intent intent = new Intent(CadastroOficina.this, CdsOficina.class);
+        Intent intent = new Intent(OpcaoCadastro.this, CdsOficina.class);
         startActivity(intent);
     }
 
     public void telaCadUsuario(View view){
-        Intent intent = new Intent(CadastroOficina.this, CdsUsuario.class);
+        Intent intent = new Intent(OpcaoCadastro.this, CdsUsuario.class);
         startActivity(intent);
     }
 

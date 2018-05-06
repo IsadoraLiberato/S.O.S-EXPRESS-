@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Login extends AppCompatActivity {
+public class LoginCliente extends AppCompatActivity {
 
     private EditText edt_email;
     private EditText edt_senha;
@@ -37,12 +37,11 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_cliente);
 
         edt_email =  findViewById(R.id.edt_email_login);
         edt_senha =  findViewById(R.id.edt_senha_login);
         btn_acessar =  findViewById(R.id.btn_acessar);
-        btn_cadastro =  findViewById(R.id.btn_cadastro);
 
         verificaSeEstaLogado();
 
@@ -51,7 +50,7 @@ public class Login extends AppCompatActivity {
     public void fazerLogin(View view)
     {
         //Chamando o progress
-        progress = new ProgressDialog(Login.this);
+        progress = new ProgressDialog(LoginCliente.this);
         progress.setTitle("Verificando dados..... ");
         progress.show();
 
@@ -66,7 +65,7 @@ public class Login extends AppCompatActivity {
        if( existeCliente && valida){
             telamapa();
         }else{
-            AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+            AlertDialog.Builder alert = new AlertDialog.Builder(LoginCliente.this);
             alert.setTitle("Erro");
             alert.setMessage("Os dados digitados não correspondem a nenhum cliente cadastrado\n" +
                     " ou faltam campos a serem preenchidos");
@@ -85,18 +84,8 @@ public class Login extends AppCompatActivity {
     }
 
 
-    public void telaOpcao(View view){
-        telaEscolhaCadastro();
-    }
-
-    private void telaEscolhaCadastro(){
-        Intent intent = new Intent(Login.this, CadastroOficina.class);
-        startActivity(intent);
-        finish();
-    }
-
     private void telamapa (){
-        Intent intent = new Intent(Login.this, ActPrincipal.class);
+        Intent intent = new Intent(LoginCliente.this, ActPrincipal.class);
         intent.putExtra("id",id_user);
         startActivity(intent);
         finish();
@@ -136,7 +125,7 @@ public class Login extends AppCompatActivity {
                             resultado = true;
                             id_user = msgL.getId();
                             progress.dismiss();
-                            Toast.makeText(Login.this, "Dados conferem", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginCliente.this, "Dados conferem", Toast.LENGTH_SHORT).show();
 
                         }else{
                             resultado = false;
