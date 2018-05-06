@@ -3,6 +3,7 @@ package com.example.fran.mapagoogle.entidade;
 public class MensagemLogin {
 
     private String msg;
+    private int id;
     private String email;
     private String senha;
 
@@ -12,6 +13,14 @@ public class MensagemLogin {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {

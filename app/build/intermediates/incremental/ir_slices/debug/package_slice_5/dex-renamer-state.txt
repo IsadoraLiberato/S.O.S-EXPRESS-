@@ -1,4 +1,0 @@
-#Sat May 05 18:55:29 BRT 2018
-base.0=C\:\\Users\\isado\\AndroidStudioProjects\\S.O.S-EXPRESS-\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\6
-path.0=classes.dex
-renamed.0=classes.dex

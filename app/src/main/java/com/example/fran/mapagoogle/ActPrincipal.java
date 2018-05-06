@@ -48,7 +48,7 @@ public class ActPrincipal extends AppCompatActivity {
                 editor.remove("senha_cliente");
                 editor.commit();
                 finish();
-                Intent intent = new Intent(ActPrincipal.this, LoginOficina.class);
+                Intent intent = new Intent(ActPrincipal.this, AcaoUsuario.class);
                 startActivity(intent);
                 break;
         }

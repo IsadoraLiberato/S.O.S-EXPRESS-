@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context="com.example.fran.mapagoogle.LoginCliente">
+    tools:context=".LoginCliente">
 
     <EditText
         android:id="@+id/edt_email_login"
         android:layout_width="350dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:contextClickable="true"
         android:ems="10"
@@ -33,10 +33,10 @@
         android:id="@+id/edt_senha_login"
         android:layout_width="350dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@android:color/background_light"
         android:ems="10"
         android:inputType="textPassword"
@@ -49,9 +49,9 @@
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/btn_acessarcli"
+        android:id="@+id/btn_acessar"
         android:layout_width="154dp"
-        android:layout_height="41dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -60,24 +60,6 @@
         android:onClick="fazerLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btn_cadastrocli"
-        android:layout_width="154dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btcadastro"
-        android:onClick="telaOpcao"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -125,17 +107,15 @@
         android:layout_width="363dp"
         android:layout_height="241dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/sos" />
+        app:srcCompat="@drawable/sos"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/textView12"
@@ -145,8 +125,8 @@
         android:textColor="@android:color/background_dark"
         android:textSize="12sp"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>

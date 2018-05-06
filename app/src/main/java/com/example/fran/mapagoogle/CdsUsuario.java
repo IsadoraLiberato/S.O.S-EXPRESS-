@@ -71,7 +71,7 @@ public class CdsUsuario extends AppCompatActivity {
 
         Toast.makeText(this, "Email: "+preferences.getEmailCliente()+" Senha: "+preferences.getSenhaCliente(),Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(CdsUsuario.this, LoginOficina.class);
+        Intent intent = new Intent(CdsUsuario.this, LoginCliente.class);
         startActivity(intent);
 
         //Chamando o progress
