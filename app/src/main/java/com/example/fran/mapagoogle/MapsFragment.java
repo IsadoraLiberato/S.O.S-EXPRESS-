@@ -7,25 +7,44 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.TileOverlay;
 
 import java.util.List;
 
 public class MapsFragment extends SupportMapFragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private LatLng posicao;
+    private String nomeUser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getMapAsync(this);
+        //pegar dados de ActMapOficina
+        Bundle data = getArguments();
+        if (data != null) {
+            String lat = data.getString("lat");
+            String log = data.getString("log");
+            nomeUser = data.getString("nome");
+            //Toast.makeText(getContext(),"lat = "+lat,Toast.LENGTH_LONG).show();
+            //Toast.makeText(getContext(),"log = "+log,Toast.LENGTH_LONG).show();
+            Double latD = Double.parseDouble(lat);
+            Double logD = Double.parseDouble(log);
+            posicao =new LatLng(latD,logD);
+
+        }
     }
 
 
@@ -34,14 +53,15 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
         mMap = googleMap;
 
         mMap.getUiSettings().setZoomControlsEnabled(true);
-        mMap.setMinZoomPreference(10);
+        //mMap.setMinZoomPreference(16);
         // Add a marker in Sydney and move the camera
-        LatLng posicao = getLocationFromAddress(getContext(), "Av. Alm. Alexandrino de Alencar, 708 - Alecrim, Natal - RN, 59030-350, Brasil");
-        LatLng posicao2 = getLocationFromAddress(getContext(), "R. da Floresta, 469 G - Candelária, Natal - RN");
-        mMap.addMarker(new MarkerOptions().position(posicao).title("Estacio"));
-        mMap.addMarker(new MarkerOptions().position(posicao2).title("Rua da floresta"));
+       //Toast.makeText(getContext(),"Posicao é = "+posicao,Toast.LENGTH_LONG).show();
+       mMap.addMarker(new MarkerOptions().position(posicao).title(nomeUser).icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_userlocation)));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(posicao));
+        //zoom no map
+        CameraPosition cameraPosition = new CameraPosition.Builder().zoom(15).target(posicao).build();
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
 
         if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -54,33 +74,5 @@ public class MapsFragment extends SupportMapFragment implements OnMapReadyCallba
             return;
         }
         mMap.setMyLocationEnabled(true);
-    }
-
-
-    public LatLng getLocationFromAddress(Context context, String strAddress)
-    {
-        Geocoder coder= new Geocoder(context);
-        List<Address> address;
-        LatLng p1 = null;
-
-        try
-        {
-            address = coder.getFromLocationName(strAddress, 5);
-            if(address==null)
-            {
-                return null;
-            }
-            Address location = address.get(0);
-            location.getLatitude();
-            location.getLongitude();
-
-            p1 = new LatLng(location.getLatitude(), location.getLongitude());
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-        return p1;
-
     }
 }

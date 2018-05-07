@@ -18,11 +18,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.fran.mapagoogle.GeneratoRetrofit.RetrofitServiceGenerator;
 import com.example.fran.mapagoogle.RestClient.RetrofitService;
 import com.example.fran.mapagoogle.entidade.Oficina;
+import com.example.fran.mapagoogle.entidade.Registro;
+import com.example.fran.mapagoogle.entidade.RetornoIdOficina;
+import com.example.fran.mapagoogle.entidade.Usuario;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -39,11 +44,15 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnMapReadyCallback,LocationListener {
+public class MapaUsuario extends  SupportMapFragment implements
+        GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener,
+        OnMapReadyCallback,LocationListener ,GoogleMap.OnMarkerClickListener {
     private GoogleMap mMap;
     private ProgressDialog progress;
     private GoogleApiClient googleApiClient;
@@ -52,13 +61,42 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
     private Marker locationOficinasMaker;
     private LatLng currentLocationLatLong;
     private List<Oficina> listOficinasMap;
+    private Usuario usuario;
+    private Registro registro;
+    private RetornoIdOficina retornoIdOficina;
+    private Oficina ofic;
+
+
+    private AlertDialog alerta;
+    private AlertDialog alertRegs;
+
+
+    EditText edt_placa;
+    EditText edt_modelo;
+    EditText edt_problema;
+
+    private int idUser;
+    private  int idOficina;
+    private String latUser;
+    private String longUser;
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        registro = new Registro();
+        usuario = new Usuario();
+        ofic = new Oficina();
 
 
+        Intent intent = getActivity().getIntent();
+        Bundle extras = intent.getExtras();
+
+
+        idUser = extras.getInt("id");
+
+        Toast.makeText(getContext(), "Id do usuario: "+idUser, Toast.LENGTH_SHORT).show();
         listaOficinas = new ArrayList<>();
         listOficinasMap = retornaOficinas();
 
@@ -71,6 +109,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
         //Chamando o progress
         progress = new ProgressDialog(getContext());
         progress.setTitle("Aguarde carregando mapa... ");
+        progress.setCancelable(false);
         progress.show();
 
     }
@@ -80,7 +119,6 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
     public void onMapReady(GoogleMap googleMap) {
 
         mMap = googleMap;
-
 
     }
 
@@ -93,7 +131,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
                 .build();
         googleApiClient.connect();
 
-       /* if (googleApiClient.isConnected()) {
+       /*if (googleApiClient.isConnected()) {
             Log.i("LOG", "googleClient connected");
 
         }else{
@@ -144,8 +182,8 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
 
                 if (response.isSuccessful()) {
                     listaOficinas = response.body();
-                    Toast.makeText(getContext(), "Chamada das oficinas OK", Toast.LENGTH_SHORT).show();
 
+                    Toast.makeText(getContext(), "Chamada das oficinas OK", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -173,7 +211,7 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
         } else {
             Toast.makeText(getContext(), "Oficinas encontradas", Toast.LENGTH_LONG).show();
 
-            for (Oficina oficina : listOficinasMap) {
+            for ( Oficina oficina : listOficinasMap) {
 
                 //So teste
                 // Toast.makeText(getContext(), "Oficina = "+oficina.getRua(), Toast.LENGTH_SHORT).show();
@@ -181,17 +219,13 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
                 LatLng posicao = getLocationFromAddress(getContext(),
                         oficina.getRua() + ", " + oficina.getNumero() + ", " + oficina.getBairro() + ", " + "Natal - RN," + oficina.getCep() + ", " + "Brasil");
 
-
-                //add market
-                mMap.addMarker(new MarkerOptions()
-                        .position(posicao)
-                        .title(oficina.getNome())
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_ofic)));
-
+                mMap.addMarker(new MarkerOptions().position(posicao)
+                .title(oficina.getNome())
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_ofic)));
 
             }
-        }
 
+        }
 
         if (currentLocationMaker != null) {
             currentLocationMaker.remove();
@@ -209,8 +243,11 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             currentLocationMaker = mMap.addMarker(markerOptions);
             progress.dismiss();
 
+            registro.setLatUser(String.valueOf(location.getLatitude()));
+            registro.setLongUser(String.valueOf(location.getLongitude()));
+
             //Move to new location
-            CameraPosition cameraPosition = new CameraPosition.Builder().zoom(17).target(currentLocationLatLong).build();
+            CameraPosition cameraPosition = new CameraPosition.Builder().zoom(14).target(currentLocationLatLong).build();
             mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
             Toast.makeText(getContext(), "Localização atualizada", Toast.LENGTH_SHORT).show();
 
@@ -219,6 +256,26 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
             Toast.makeText(getContext(), "Não foi possivel obter sua posição", Toast.LENGTH_SHORT).show();
             progress.dismiss();
         }
+
+        //evento de click para o marcador
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+
+                //Chamando o progress
+                progress = new ProgressDialog(getContext());
+                progress.setTitle("Carregando dados oficina... ");
+                progress.setCancelable(false);
+                progress.show();
+
+
+                final String nomeOficina = marker.getTitle();
+                getOficina(nomeOficina);
+
+                return true;
+            }
+        });
+
 
       /*  LocationData locationData = new LocationData(location.getLatitude(), location.getLongitude());
         mDatabase.child("location").child(String.valueOf(new Date().getTime())).setValue(locationData);
@@ -365,11 +422,181 @@ public class MapaUsuario extends  SupportMapFragment implements GoogleApiClient.
                         LocationManager.NETWORK_PROVIDER,
                         MIN_TIME_BW_UPDATES,
                         MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-
             }
         } else {
             Toast.makeText(getContext(), "Não é possível obter a localização", Toast.LENGTH_SHORT).show();
         }
     }
+
+    //pega o click no marcador do mapa
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        return false;
+
+    }
+
+    private RetornoIdOficina getOficina(final String nome){
+
+
+        RetrofitService service = RetrofitServiceGenerator.createService(RetrofitService.class);
+
+        Call<RetornoIdOficina> call = service.getOficina(nome);
+
+        call.enqueue(new Callback<RetornoIdOficina>() {
+            private Call<RetornoIdOficina> call;
+            private Response<RetornoIdOficina> response;
+
+            @Override
+            public void onResponse(Call<RetornoIdOficina> call, Response<RetornoIdOficina> response) {
+                this.call = call;
+                this.response = response;
+                if (response.isSuccessful()) {
+
+                    retornoIdOficina = response.body();
+
+                    Log.i("AppCliente", "Body = "+retornoIdOficina.getMsg());
+                    //verifica aqui se o corpo da resposta não é nulo
+                    if (retornoIdOficina != null) {
+
+                        //carrega uma view para o alert dialog
+                        View v = getLayoutInflater().inflate(R.layout.layout_edt_dialog, null);
+                        edt_placa = v.findViewById(R.id.edt_placa);
+                        edt_modelo = v.findViewById(R.id.edt_modelo);
+                        edt_problema = v.findViewById(R.id.edt_problema);
+                        //add evento de click para o botao cancelar da view e fecha a janela de dialog
+                        v.findViewById(R.id.btn_alert_cancel).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                alerta.dismiss();
+                            }
+                        });
+                        //add evento de click para o botao enviar da view e salva os dados do chamado
+                        v.findViewById(R.id.btn_alert_enviar).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                //Chamando o progress
+                                progress = new ProgressDialog(getContext());
+                                progress.setTitle("Salvando registro...");
+                                progress.setCancelable(false);
+                                progress.show();
+
+                                String placa = edt_placa.getText().toString();
+                                String modelo = edt_modelo.getText().toString();
+                                String problema = edt_problema.getText().toString();
+
+                                registro.setPlaca(placa);
+                                registro.setModelo(modelo);
+                                registro.setDescProblema(problema);
+                                registro.setFk_id_cliente(idUser);
+                                registro.setFk_id_oficina(retornoIdOficina.getId());
+
+                                geraRegistro(registro);
+
+
+                            }
+                        });
+
+                        AlertDialog.Builder  builder = new AlertDialog.Builder(getContext());
+                        builder.setTitle("Preencha os campos abaixo\n"+
+                                "Oficina seleciona: "+"("+nome+")");
+                        builder.setView(v);
+
+                        builder.setCancelable(false);
+                        alerta = builder.create();
+                        alerta.show();
+
+
+                        progress.dismiss();
+
+
+                    } else {
+                        progress.dismiss();
+                        Toast.makeText(getContext(), "Resposta nula do servidor", Toast.LENGTH_SHORT).show();
+                    }
+
+                } else {
+
+                    Toast.makeText(getContext(), "Resposta não foi sucesso", Toast.LENGTH_SHORT).show();
+                    // segura os erros de requisição
+                    ResponseBody errorBody = response.errorBody();
+                    progress.dismiss();
+                }
+
+            }
+            @Override
+            public void onFailure(Call<RetornoIdOficina> call, Throwable t) {
+                Log.e("AppCep", "Não foi possível recuperar o Cep", t);
+                progress.dismiss();
+            }
+        });
+
+        return  retornoIdOficina;
+
+    }
+
+    private void geraRegistro(Registro registro){
+
+            RetrofitService service = RetrofitServiceGenerator.createService(RetrofitService.class);
+
+            Call<Registro> call = service.cadastrarRegistro(registro.getPlaca(), registro.getModelo(), registro.getDescProblema(),
+                    registro.getFk_id_cliente(), registro.getFk_id_oficina(),registro.getLatUser(), registro.getLogUser());
+
+            call.enqueue(new Callback<Registro>() {
+                private Call<Registro> call;
+                private Response<Registro> response;
+
+                @Override
+                public void onResponse(Call<Registro> call, Response<Registro> response) {
+                    this.call = call;
+                    this.response = response;
+                    if (response.isSuccessful()) {
+
+                        final Registro regist = response.body();
+                        Toast.makeText(getContext(), "Registro problema: "+regist.getDescProblema(), Toast.LENGTH_SHORT).show();
+                        Log.i("AppCliente", "Body = "+regist.getPlaca());
+                        //verifica aqui se o corpo da resposta não é nulo
+                        if (regist != null) {
+
+                            progress.dismiss();
+
+                            AlertDialog.Builder  builder = new AlertDialog.Builder(getContext());
+                            builder.setTitle("Mensagem");
+                            builder.setMessage("O registro foi salvo com sucesso");
+                            builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    alertRegs.dismiss();
+                                }
+                            });
+                            builder.setCancelable(false);
+                            alertRegs = builder.create();
+                            alertRegs.show();
+
+
+
+
+                        } else {
+                            progress.dismiss();
+                            Toast.makeText(getContext(), "Resposta nula do servidor", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } else {
+
+                        Toast.makeText(getContext(), "Resposta não foi sucesso", Toast.LENGTH_SHORT).show();
+                        // segura os erros de requisição
+                        ResponseBody errorBody = response.errorBody();
+                        progress.dismiss();
+                    }
+
+                }
+                @Override
+                public void onFailure(Call<Registro> call, Throwable t) {
+                    Log.e("AppCep", "Não foi possível recuperar o Cep", t);
+                    progress.dismiss();
+                }
+            });
+
+        }
 
 }
