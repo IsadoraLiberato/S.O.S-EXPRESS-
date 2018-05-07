@@ -2,5 +2,7 @@
 <resources>
     <color name="colorPrimary">#3f51b5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#ffff38</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="cor_btn_telaacao">#FF000000</color>
+    <color name="cor_text_botao_telaacao">#ffff38</color>
 </resources>

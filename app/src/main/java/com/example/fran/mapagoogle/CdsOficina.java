@@ -1,6 +1,7 @@
 package com.example.fran.mapagoogle;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.fran.mapagoogle.GeneratoRetrofit.RetrofitServiceGenerator;
 import com.example.fran.mapagoogle.RestClient.RetrofitService;
 import com.example.fran.mapagoogle.entidade.Oficina;
+import com.example.fran.mapagoogle.util.CamposCdsOficina;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -29,6 +31,7 @@ public class CdsOficina extends AppCompatActivity {
     private  EditText edt_cnpj;
     private  EditText edt_email;
     private  EditText edt_senha;
+    private EditText edt_confirmS_ofic;
 
     Oficina resOficina = new Oficina();
     Button cadOficina;
@@ -53,35 +56,57 @@ public class CdsOficina extends AppCompatActivity {
                 edt_cnpj=(EditText)findViewById(R.id.edt_cnpj_ofic);
                 edt_email=(EditText)findViewById(R.id.edt_email_ofic);
                 edt_senha=(EditText)findViewById(R.id.edt_senha_ofic);
+                edt_confirmS_ofic=(EditText)findViewById(R.id.edt_confirmS_ofic);
 
-                String rua = edt_rua.getText().toString();
-                String numero = edt_numero.getText().toString();
-                int numeroFinal = Integer.parseInt(numero);
-                String bairro =edt_bairro.getText().toString();
-                String cep =edt_cep.getText().toString();
-                String nomeFantasia =edt_nomeFantasia.getText().toString();
-                String telefone =edt_telefone.getText().toString();
-                String cnpj =edt_cnpj.getText().toString();
-                String email =edt_email.getText().toString();
-                String senha =edt_senha.getText().toString();
+                CamposCdsOficina camposCdsOficina = new CamposCdsOficina();
+                camposCdsOficina.setEdt_rua(edt_rua);
+                camposCdsOficina.setEdt_numero(edt_numero);
+                camposCdsOficina.setEdt_bairro(edt_bairro);
+                camposCdsOficina.setEdt_cep(edt_cep);
+                camposCdsOficina.setEdt_nomeFantasia(edt_nomeFantasia);
+                camposCdsOficina.setEdt_telefone(edt_telefone);
+                camposCdsOficina.setEdt_cnpj(edt_cnpj);
+                camposCdsOficina.setEdt_email(edt_email);
+                camposCdsOficina.setEdt_senha(edt_senha);
+                camposCdsOficina.setEdt_confirmS_ofic(edt_confirmS_ofic);
 
-                //Chamada do metodo do retrofit
-                retrofitConverter( rua, numeroFinal, bairro,cep,nomeFantasia,telefone, cnpj,email,senha);
+                Oficina ofic = new Oficina();
+                ofic.setRua(camposCdsOficina.getEdt_rua().getText().toString());
+                ofic.setNumero(camposCdsOficina.getEdt_numero().getText().toString());
+                ofic.setBairro(camposCdsOficina.getEdt_bairro().getText().toString());
+                ofic.setCep(camposCdsOficina.getEdt_cep().getText().toString());
+                ofic.setNome(camposCdsOficina.getEdt_nomeFantasia().getText().toString());
+                ofic.setTelefone(camposCdsOficina.getEdt_telefone().getText().toString());
+                ofic.setCnpj(camposCdsOficina.getEdt_cnpj().getText().toString());
+                ofic.setEmail(camposCdsOficina.getEdt_email().getText().toString());
+                ofic.setSenha(camposCdsOficina.getEdt_senha().getText().toString());
 
-                //Chamando o progress
-                progress = new ProgressDialog(CdsOficina.this);
-                progress.setTitle("Salavando dados..... ");
-                progress.show();
+
+                if(validaCampos(camposCdsOficina)){
+                    Toast.makeText(CdsOficina.this, "Campos todos preenchidos", Toast.LENGTH_SHORT).show();
+                    //Chamada do metodo do retrofit
+                    retrofitConverter(ofic);
+                    //Chamando o progress
+                    progress = new ProgressDialog(CdsOficina.this);
+                    progress.setTitle("Salavando dados..... ");
+                    progress.show();
+                }else {
+                    Toast.makeText(CdsOficina.this, "Campos não foram todos preenchidos", Toast.LENGTH_SHORT).show();
+
+                }
+
             }
         });
 
     }
 
-    public void retrofitConverter( String rua,int numero, String bairro,String cep,String nFantasia,String telefone, String cnpj,String email,String senha) {
+    public void retrofitConverter(Oficina oficina) {
 
         RetrofitService service = RetrofitServiceGenerator.createService(RetrofitService.class);
+        int num  = Integer.valueOf(oficina.getNumero());
 
-        Call<Oficina> call = service.cadastarOficinas(rua,numero, bairro,cep,nFantasia,telefone,cnpj,email,senha);
+        Call<Oficina> call = service.cadastarOficinas(oficina.getRua(),num, oficina.getBairro(),oficina.getCep(),
+                                     oficina.getNome(),oficina.getTelefone(),oficina.getCnpj(),oficina.getEmail(),oficina.getSenha());
 
         call.enqueue(new Callback<Oficina>() {
             @Override
@@ -89,11 +114,9 @@ public class CdsOficina extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     Oficina oficina = response.body();
-                   // Log.i("AppOficina", "Response = "+response);
-                    //Log.i("AppOficina", "Body = "+response.body());
 
-                     String rua =  oficina.getBairro();
-                     Log.i("AppOficina", "Body = "+rua);
+
+
                     //verifica aqui se o corpo da resposta não é nulo
                     if (oficina != null) {
 
@@ -102,11 +125,18 @@ public class CdsOficina extends AppCompatActivity {
 
 
                         progress.dismiss();
+                        finish();
+                        Intent intent = new Intent(CdsOficina.this, OpcaoLogin.class);
+                        startActivity(intent);
+
 
 
                     } else {
                         progress.dismiss();
                         Toast.makeText(getApplicationContext(), "Resposta nula do servidor", Toast.LENGTH_SHORT).show();
+                        finish();
+                        Intent intent = new Intent(CdsOficina.this, OpcaoLogin.class);
+                        startActivity(intent);
                     }
 
                 } else {
@@ -115,17 +145,89 @@ public class CdsOficina extends AppCompatActivity {
                     // segura os erros de requisição
                     ResponseBody errorBody = response.errorBody();
                     progress.dismiss();
+                    finish();
+                    Intent intent = new Intent(CdsOficina.this, OpcaoLogin.class);
+                    startActivity(intent);
                 }
 
             }
             @Override
             public void onFailure(Call<Oficina> call, Throwable t) {
-                Log.e("AppCep", "Não foi possível recuperar o Cep", t);
+
                 progress.dismiss();
+                finish();
+                Intent intent = new Intent(CdsOficina.this, OpcaoLogin.class);
+                startActivity(intent);
             }
         });
 
 
+    }
+
+    private boolean validaCampos(CamposCdsOficina camposCdsOficina){
+        boolean resultado = true;
+
+        String rua = camposCdsOficina.getEdt_rua().getText().toString();
+        String numero = camposCdsOficina.getEdt_numero().getText().toString();
+        String bairro = camposCdsOficina.getEdt_bairro().getText().toString();
+        String cep = camposCdsOficina.getEdt_cep().getText().toString();
+        String nome = camposCdsOficina.getEdt_nomeFantasia().getText().toString();
+        String telefone = camposCdsOficina.getEdt_telefone().getText().toString();
+        String cnpj = camposCdsOficina.getEdt_cnpj().getText().toString();
+        String email = camposCdsOficina.getEdt_email().getText().toString();
+        String senha =camposCdsOficina.getEdt_senha().getText().toString();
+        String senhaConfirm =camposCdsOficina.getEdt_confirmS_ofic().getText().toString();
+
+        if("".equals(rua) || rua == null){
+            camposCdsOficina.getEdt_rua().setError("Preencha o campo rua");
+            resultado = false;
+        }
+
+        if("".equals(numero) || numero == null){
+            camposCdsOficina.getEdt_numero().setError("Preencha o campo numero");
+            resultado = false;
+        }
+
+        if("".equals(bairro) || bairro == null){
+            camposCdsOficina.getEdt_bairro().setError("Preencha o campo bairro");
+            resultado = false;
+        }
+        if("".equals(cep) || cep == null){
+            camposCdsOficina.getEdt_cep().setError("Preencha o campo cep");
+            resultado = false;
+        }
+        if("".equals(nome) || nome == null){
+            camposCdsOficina.getEdt_nomeFantasia().setError("Preencha o campo nome");
+            resultado = false;
+        }
+        if("".equals(telefone) || telefone == null){
+            camposCdsOficina.getEdt_telefone().setError("Preencha o campo telefone");
+            resultado = false;
+        }
+        if("".equals(cnpj) || cnpj == null){
+            camposCdsOficina.getEdt_cnpj().setError("Preencha o campo cnpj");
+            resultado = false;
+        }
+        if("".equals(email) || email == null){
+            camposCdsOficina.getEdt_email().setError("Preencha o campo email");
+            resultado = false;
+        }
+        if("".equals(senha) || senha == null){
+            camposCdsOficina.getEdt_senha().setError("Preencha o campo senha");
+            resultado = false;
+        }
+
+        if("".equals(senhaConfirm) || senhaConfirm == null){
+            camposCdsOficina.getEdt_confirmS_ofic().setError("Preencha o campo senhaConfirm");
+            resultado = false;
+        }
+
+        if(!senha.equals(senhaConfirm)){
+            Toast.makeText(this, "As senhas não correspondem...", Toast.LENGTH_SHORT).show();
+            resultado = false;
+        }
+
+        return resultado;
     }
 
 

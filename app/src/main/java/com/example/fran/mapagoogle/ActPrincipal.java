@@ -16,6 +16,7 @@ public class ActPrincipal extends AppCompatActivity {
 
     private FragmentManager fragmentManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +45,12 @@ public class ActPrincipal extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.sair:
                 SharedPreferences.Editor editor = getSharedPreferences(NOME_ARQUIVO,MODE).edit();
-                editor.remove("email_cliente");
-                editor.remove("senha_cliente");
+                editor.remove(com.example.fran.mapagoogle.util.Preferences.EMAIL_CLIENTE);
+                editor.remove(com.example.fran.mapagoogle.util.Preferences.SENHA_CLIENTE);
+                editor.remove(com.example.fran.mapagoogle.util.Preferences.ID_CLIENTE);
                 editor.commit();
                 finish();
-                Intent intent = new Intent(ActPrincipal.this, LoginOficina.class);
+                Intent intent = new Intent(ActPrincipal.this, OpcaoLogin.class);
                 startActivity(intent);
                 break;
         }

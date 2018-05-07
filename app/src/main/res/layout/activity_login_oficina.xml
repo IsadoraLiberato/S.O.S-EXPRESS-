@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context="com.example.fran.mapagoogle.LoginOficina">
+    tools:context=".LoginOficina">
 
 
     <EditText
-        android:id="@+id/edt_email_login"
+        android:id="@+id/edt_email_loginOficina"
         android:layout_width="350dp"
         android:layout_height="47dp"
         android:layout_marginBottom="8dp"
@@ -31,7 +31,7 @@
         tools:targetApi="m" />
 
     <EditText
-        android:id="@+id/edt_senha_login"
+        android:id="@+id/edt_senha_loginOficina"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_marginBottom="8dp"
@@ -50,7 +50,7 @@
         tools:ignore="LabelFor" />
 
     <Button
-        android:id="@+id/btn_acessar"
+        android:id="@+id/btn_acessarOficina"
         android:layout_width="154dp"
         android:layout_height="41dp"
         android:layout_marginBottom="32dp"
@@ -58,27 +58,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btacessar"
-        android:onClick="fazerLogin"
+        android:onClick="fazerLoginOficina"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btn_cadastro"
-        android:layout_width="154dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btcadastro"
-        android:onClick="telaOpcao"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
